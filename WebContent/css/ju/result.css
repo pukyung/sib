@@ -1,0 +1,53 @@
+
+html{
+  width: 100%;
+}
+
+body{
+  height:100%;
+  margin: auto;
+  vertical-align: middle;
+}
+
+.dv {
+	padding-top : 10%;
+	height : 70%;
+}
+
+*{
+  font-family: 'surroundAir', Times,serif;
+  color: #464646;
+}
+
+h5{
+  font-size: 24px;
+}
+
+#result{
+  border: 3px solid #05c46b;
+  width: 450px;
+  height: 300px;
+  text-align: center;
+  display: table;
+  margin:auto;
+  vertical-align: middle;
+  padding-top : 10%;
+}
+
+#fail{
+  border: 3px solid #05c46b;
+  width: 450px;
+  height: 300px;
+  display: table;
+  margin: auto;
+  text-align: center;
+}
+
+#login, #again, #find{
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 30px;
+  background-color: #05c46b;
+  color: white;
+}

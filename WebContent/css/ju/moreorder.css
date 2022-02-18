@@ -1,0 +1,62 @@
+
+html{
+  width:100%;
+}
+
+body{
+  width: 70%;
+  margin: auto;
+}
+
+*{
+  font-family: 'surroundAir', Times,serif;
+  color: #464646;
+}
+
+#main, #back{
+  float: right;
+  width: 80px;
+  height: 30px;
+  border-radius: 30px 30px;
+  border: none;
+  background-color: #05c46b;
+  color: white;
+}
+
+#title{
+  height: 80px;
+  width: 80%;
+  line-height: 80px;
+  border-bottom: 2px solid #464646;
+  margin: auto;
+}
+
+table{
+  border-collapse: collapse;
+  margin-left: 50px;
+  margin-top: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+thead td{
+  padding: 10px;
+  border-bottom: 1px solid #808e9b;
+  text-align: center;
+  font-weight: bold;
+}
+
+table tbody td{
+  border-top: 1px solid #808e9b;
+  text-align: center;
+  padding: 10px;
+}
+
+.inside-td{
+  border-right: 1px solid #808e9b;
+}
+
+.inside-th{
+  border-right: 1px solid #808e9b;
+}

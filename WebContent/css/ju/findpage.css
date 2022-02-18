@@ -1,0 +1,180 @@
+@font-face {
+  font-family: 'surroundAir';
+  src: url("../font/Cafe24SsurroundAir.ttf");
+}
+
+html{
+  width: 100%;
+}
+
+body{
+  width: 100%;
+}
+
+*{
+  margin:0px;
+  font-family: 'surroundAir', Times,serif;
+}
+
+.body {
+	height : 1000px;
+}
+
+#content-title{
+  width: 60%;
+  margin: auto;
+  height: 80px;
+  line-height: 80px;
+  border-bottom: 2px solid #05c46b;
+}
+
+#content-title h3{
+  font-size: 24px;
+  font-weight:800;
+  color: #464646;
+}
+
+#who{
+  width:60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+#who table{
+  width: 100%;
+  height: 300px;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#who table td{
+  text-align: center;
+}
+
+#cus-td{
+  border-top:2px solid #05c46b;
+  border-right: 2px solid #05c46b;
+  border-bottom: 2px solid #05c46b;
+}
+
+#sel-td{
+  border-top:2px solid #05c46b;
+  border-left: 2px solid #05c46b;
+  border-bottom: 2px solid #05c46b;
+}
+
+#cusbtn, #selbtn{
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: white;
+  font-size: 40px;
+}
+
+#cusbtn{
+  color: #f3a683;
+}
+
+#cusbtn:hover{
+  box-shadow: 1px 1px 5px 5px #f3a683;
+}
+
+#selbtn{
+  color: #786fa6;
+}
+
+#selbtn:hover{
+  box-shadow: 1px 1px 5px 5px #786fa6;
+}
+
+/* customer */
+#customer, #seller{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border: 1px solid black;
+}
+
+#cus-find, #sel-find{
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.id{
+  margin-right: 10px;
+}
+
+.id, .pw{
+  width: 48%;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #464646;
+  border-collapse: collapse;
+}
+
+.id:hover, .pw:hover{
+  box-shadow: 2px 2px 5px 0px #464646;
+}
+
+#cusphone{
+  margin-right: 20px;
+}
+
+.what{
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  padding: 10px;
+}
+
+#byPhoneC, #byPhoneS, #byEmail, #byRepname, #cuspw, #selpw{
+  height: 300px;
+}
+
+#byPhoneC h4, #byEmail h4, #cuspw h4, #byPhoneS h4, #byRepname h4, #selpw h4{
+  width: 70%;
+  margin: auto;
+  font-size: 20px;
+}
+
+#byPhoneC table, #byEmail table, #cuspw table, #byPhoneS table, #byRepname table, #selpw table{
+  width: 70%;
+  height: 100px;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+.find{
+  width: 70%;
+  margin-left : 15%;
+  padding-top : 3%;
+  height: 40px;
+  line-height: 40px;
+  text-align : center;
+
+}
+
+#name-label,#phonec-label{
+  font-weight: bold;
+}
+
+input[type="text"]{
+  width: 300px;
+  height: 30px;
+  margin-left: 20px;
+  border: none;
+  border-bottom: 2px solid #05c46b;
+}
+
+.findbtn{
+  width: 350px;
+  height: 40px;
+  border-radius: 40px;
+  border: none;
+  background-color: #05c46b;
+  color: white;
+  font-size: 18px;
+}

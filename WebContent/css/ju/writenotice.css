@@ -1,0 +1,115 @@
+html{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  height: 100%;
+  margin: auto;
+}
+
+@font-face {
+  font-family: 'surroundAir';
+  src: url("../font/Cafe24SsurroundAir.ttf");
+}
+
+*{
+  margin:0px;
+  font-family: 'surroundAir', Times,serif;
+}
+
+#head{
+  height: 80px;
+  line-height: 80px;
+  font-weight:bold;
+  color: #05c46b;
+  font-size:24px;
+}
+
+.set {
+	width : 70%;
+	margin : auto;	
+}
+
+#content{
+  height:700px;
+  margin-bottom: 10%;
+  border: 1px solid #a5b1c2;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* top */
+.top{
+  width: 80%;
+  height: 70px;
+  line-height: 70px; 
+  padding:20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #a5b1c2;
+}
+
+
+.top #title{
+  height: 50px;
+  width: 70%;
+  border: 1px solid #d1d8e0;
+  border-radius: 5px;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+.top #title:focus{
+  outline: 2px solid #05c46b;
+}
+
+#important{
+  width: 20px;
+  height: 20px;
+}
+
+/* main */
+.main{
+  width: 80%;
+  height: 200px;
+  margin: auto;
+  padding:20px;
+}
+
+#lab-cont{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#cont{
+  width: 90%;
+  height: 70%;
+  margin-top: 0px;
+  resize: none;
+  border-radius: 10px;
+  border:1px solid #a5b1c2
+}
+
+#cont:focus{
+  outline: 2px solid #05c46b;
+}
+
+.btn-area{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.btn{
+  width: 50%;
+  height: 50px;
+  border-radius: 50px 50px;
+  border: none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: #05c46b;
+  color: white;
+  font-size: 20px;
+}

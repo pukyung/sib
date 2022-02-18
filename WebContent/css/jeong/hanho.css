@@ -1,0 +1,528 @@
+
+@font-face{
+	font-family : "surroundAir";
+	src : url('../../font/surroundAir.ttf');
+}
+
+
+a {
+	text-decoration : none;
+}
+
+.overy {
+	overflow-y = scroll;
+}
+
+.bgc {
+	background-color : #55c47f21;
+}
+
+.cl {
+	color : #05c46b;
+}
+
+.cr {
+	color : #ff4c4c;
+}
+
+.mauto {
+	margin : auto;
+}
+
+.bgcl {
+	background-color : #05c46b;
+}
+
+.bgcr {
+	background-color : #ff3f3f;
+}
+
+.p1 {
+	padding : 1%;
+}
+
+.p2 {
+	padding : 2%;
+}
+
+.p3 {
+	padding : 3%;
+}
+
+.m3 {
+	margin : 3%;
+}
+
+.mainsec1 {
+	background-color : white;
+}
+
+.mainsec1h1 {
+	padding-top : 3%;
+	color : white;
+}
+
+.tbold {
+	font-weight : bold;
+}
+
+.tr {
+	text-align : right;
+}
+
+.tl {
+	text-align :left;
+}
+
+.tc {
+	text-align : center;
+}
+
+.wd100 {
+	width : 100%;
+}
+
+.wd90 {
+	width : 90%;
+}
+
+.wd80 {
+	width : 80%;
+}
+
+.wd70 {
+	width : 70%;
+}
+
+.wd60 {
+	width : 60%;
+}
+
+.wd50 {
+	width : 50%;
+}
+
+.wd40 {
+	width : 40%;
+}
+
+.wd33 {
+	width : 33%;	
+}
+
+.wd30 {
+	width : 30%;
+}
+
+.wd20 {
+	width : 20%;
+}
+
+.wd15 {
+	width : 15%;
+}
+
+.wd10 {
+	width : 10%;
+}
+
+.wd8 {
+	width : 8%;
+}
+
+.wd80mg {
+	width : 80%;
+	margin-left : 10%;
+	margin-right : 10%;
+}
+
+.ht100 {
+	height : 100%;
+}
+
+.ht1000px {
+	height : 1000px;
+}
+
+.ht1200px {
+	height : 1200px;
+}
+
+.ht85 {
+	height : 85%;
+}
+
+.ht70 {
+	height : 70%;
+}
+
+.mr5 {
+	margin-right : 5%;
+}
+
+.maindv1 {
+	width : 74%;
+	margin-left : 10%;
+	margin-right : 10%;
+}
+
+.maindv2 {
+	display : flex;
+	flex-wrap: wrap;
+}
+
+.productsec1 {
+	width : 80%;
+	margin-left : 10%;
+	margin-right : 10%;
+}
+
+.pb10 {
+	padding-bottom : 10%;
+}
+
+.pt12 {
+	padding-top : 12%;
+}
+
+.pt10 {
+	padding-top : 10%;
+}
+
+.pt3 {
+	padding-top : 3%;
+}
+
+.pt {
+	height : 40%;
+	text-align : center;
+}
+
+.fl {
+	float : left;
+}
+
+.mainsearch {
+	width : 50%;
+	padding-top : 15%;
+	margin-left : 25%;
+}
+
+.sipt {
+	color : black;
+	padding : 0 10%;
+	outline : none;
+	background-color : #abcf9d;
+	border : none;
+	border-radius : 7px 7px 0 0;
+	height : 10%;
+}
+
+.sipb {
+	border : none;
+	border-radius : 0 0 7px 7px;
+	height : 10%;
+	background-color : #e5e5ca;
+}
+
+.ht40px {
+	height : 40px;
+}
+
+.sipt : focus {
+	background-color : white;
+}
+
+.product {
+	width : 100%;
+}
+
+.productform {
+	width : 50%;
+	margin-left : 25%;
+	margin-right : 25%;
+}
+
+.productsec1 {
+	display : flex;
+	flex-wrap: wrap;
+}
+
+.productse {
+	text-align : center;
+	width : 40%;
+	height : 25px;
+	border-radius : 5px;
+}
+
+.productsel {
+	width : 30%;
+	margin : auto;
+	margin-right : 0;
+	text-align : right;
+}
+
+.producta {
+	width : 19.6%;
+	padding : 0.2%;
+	margin-bottom : 3%;
+}
+
+.maindv {
+	padding : 3%;
+}
+
+.maina {
+	width : 30%;
+	padding : 1.66%;
+}
+
+.pr3 {
+	padding-right : 3%;
+}
+
+.detail {
+	width : 68%;
+	margin-left : 16%;
+	padding-top : 4%;
+	display : flex;
+	text-align : center;
+	background-color : #55c47f21;
+}
+
+.detailsub {
+	width : 68%;
+	margin-left : 16%;
+	text-align : center;
+	background-color : #55c47f21;
+}
+
+.detailsec2 {
+	border-top : 1px solid #0000001a;
+}
+
+.mt10 {
+	margin-top : 10%;
+}
+
+.mt5 {
+	margin-top : 5%;
+}
+
+.mt3 {
+	margin-top : 3%;
+}
+
+.bdb {
+	border-bottom : 1px solid #0000001a;
+}
+
+.font08 {
+	font-size : 0.8em;
+}
+
+.detailsel {
+	padding : 3% 3% 6% 0;
+}
+
+.detailbtn {
+	padding : 1%;
+	border : none;
+	border-radius : 6px;
+	background-color : #0e0cff6b;
+}
+
+.bcl {
+	background-color : #05c466;	
+}
+
+.detailtbl {
+	width : 100%;
+}
+
+.section {
+	height : 88vh;
+	width : 60%;
+	margin-left : 20%;
+	background-color : #55c47f21;
+}
+
+.order {
+	width : 68%;
+	margin-left : 16%;
+	text-align : center;
+	background-color : #55c47f21;
+}
+
+.ordertbl {
+	border : 1px solid #e9f7ee;
+	overflow : hidden;
+	border-radius : 30px 30px 0 0;	
+}
+
+.orderip {
+	border : 1px solid #05c46b;
+	border-radius : 0 0 30px 30px;
+	background-color : #f8fdfa;
+	text-align : center;
+}
+
+.orderedbtndiv {
+	width : 60%;
+	margin : 0 17%;
+	padding-top : 10%;
+}
+
+.orderipp {
+	width : 92%;
+	padding : 4%;
+}
+
+.tblinfo {
+	border-bottom : 2px solid #05c46b;
+	width : 80%;
+	margin-left : 10%;
+	margin-bottom : 2%;
+}
+
+#tbl td {
+	padding : 10px;
+}
+
+.tbl {
+	border-collapse : collapse;
+	table-layout : fixed;
+	width : 80%;
+	margin-left : 10%;
+}
+
+.thtr {
+	border-bottom : 2px solid #808e9b;
+	font-weight : bold;
+	background-color : #00000012;
+}
+
+.tbtr {
+	border-top : 1px solid #808e9b;
+	background-color : #ffffffb3;
+}
+
+.tdbl {
+	border-right : 1px solid #808e9b;
+}
+
+.delbtn {
+	border : none;
+	padding : 10px;
+	border-radius : 20px 20px;
+	color : white;
+}
+
+.cartbtndv {
+	width : 80%;c
+	margin-left : 10%;
+	margin-right : 10%;
+}
+
+.cartbtn {
+	padding : 1%;
+	border : none;
+	border-radius : 6px;
+	color : white;
+}
+
+.rv {
+	overflow-y : scroll;
+	height : 300px;
+}
+
+.content-title {
+	border-bottom : 2px solid #05c46b;
+	width : 90%;
+	margin : auto
+}
+
+.reviewh3 {
+	color : #464646;
+	margin-bottom : 10px;
+	font-size : 30px;
+}
+
+.th {
+	border-bottom : 2px solid #808e9b;
+}
+
+.inside-td {
+	border-right : 1px solid #808e9b;
+}
+
+.inside-th {
+	border-right : 1px solid #808e9b;
+}
+
+.mainsipt {
+	background-color : #ffffff00;
+	padding : 0 10px;
+	margin : auto;
+	height : 15%;
+	width : 95%;
+	border : none;
+	color : white;
+	font-size : 1.5em;
+	outline : none;
+}
+
+.mainsipb {
+	margin-left : -39px;
+	color : white;
+	font-size : 2em;
+	border : none;
+	background-color : #ffffff00;
+}
+
+.mainsifm {
+	width : 45%;
+	padding : 8px 0;
+	display : flex;
+	margin : auto;
+	border-radius : 10px;
+	background-color : #000000a3;
+}
+
+.productin-r {
+	border-right : 2px solid #05c46b;
+	padding-right : 2%;
+	text-align : right;
+}
+
+.productin-tr {
+	border-bottom : 1px solid #05c46b;
+}
+
+.productin-ipt {
+	border : 1px solid #778ca3;
+	border-radius : 5px;
+	height : 25px;
+	width : 60%;
+	padding : 0 2 %;
+}
+
+.coll {
+	border-collapse : collapse;
+	
+}
+
+.productin-btn {
+	border-radius : 30px;
+	border : none;
+	width : 25%;
+	height : 5%;
+	font-size : 1em;
+}
+
+.product-btn {
+	border : none;
+	border-radius : 13px;
+	background-color : #707672;
+	height : 25px;
+}
