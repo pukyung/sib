@@ -35,7 +35,7 @@ public class SpringDAO_Im implements SpringDAO {
 
 	
 	// productAll ----------------------------------------------------------
-	// »óÇ° id¿¡ ÇØ´çÇÏ´Â image_TÀÇ image¸¦ °®°í ¿À±â À§ÇØ jdbcTemplate.query µÎ¹ø ½ÇÇà
+	// ìƒí’ˆ idì— í•´ë‹¹í•˜ëŠ” image_Tì˜ imageë¥¼ ê°–ê³  ì˜¤ê¸° ìœ„í•´ jdbcTemplate.query ë‘ë²ˆ ì‹¤í–‰
 	@Override
 	public List<SpringVO> productAll(SpringVO vo) throws Exception {
 
@@ -52,7 +52,7 @@ public class SpringDAO_Im implements SpringDAO {
 			}
 		};
 		
-		// image_T¿¡¼­ image °¡Á®¿À±â
+		// image_Tì—ì„œ image ê°€ì ¸ì˜¤ê¸°
 		RowMapper<SpringVO> rm2 = new RowMapper<SpringVO>() {
 			@Override
 			public SpringVO mapRow(ResultSet rs, int arg1) throws SQLException {
@@ -205,7 +205,7 @@ public class SpringDAO_Im implements SpringDAO {
 			String src = Util.upload() + t.getOriginalFilename();
 			System.out.println( "src : " + src );
 			
-			// ÆÄÀÏ ¾÷·Îµå
+			// íŒŒì¼ ì—…ë¡œë“œ
 			InputStream in = t.getInputStream();
 			OutputStream out = new FileOutputStream( src );
 			
@@ -375,8 +375,8 @@ public class SpringDAO_Im implements SpringDAO {
 	}
 	
 	// insertcart ----------------------------------------------------------
-	// cart_T¿¡ °ª ³Ö±â
-	// ¼öÁ¤Áß
+	// cart_Tì— ê°’ ë„£ê¸°
+	// ìˆ˜ì •ì¤‘
 	@Override
 	public String insertcart(SpringVO vo, String id) throws Exception {
 		
@@ -413,7 +413,7 @@ public class SpringDAO_Im implements SpringDAO {
 	
 	
 	// ordercheck ----------------------------------------------------------
-	// »ó¼¼ÁÖ¹®ÆäÀÌÁö·Î °ª ³Ñ±â±â
+	// ìƒì„¸ì£¼ë¬¸í˜ì´ì§€ë¡œ ê°’ ë„˜ê¸°ê¸°
 	@Override
 	public List<SpringVO> ordercheck(SpringVO vo, String id, @RequestParam List<String> cartcount) throws Exception {
 		
@@ -456,7 +456,7 @@ public class SpringDAO_Im implements SpringDAO {
 			}
 		};
 
-		// detail ¿¡¼­ ³Ñ¾î¿È
+		// detail ì—ì„œ ë„˜ì–´ì˜´
 		if( vo.getForcount() == 1 ) {
 			
 			SpringVO vo2 = new SpringVO();
@@ -471,7 +471,7 @@ public class SpringDAO_Im implements SpringDAO {
 			
 			ls.add( vo2 );
 			
-		// cart ¿¡¼­ ³Ñ¾î¿È
+		// cart ì—ì„œ ë„˜ì–´ì˜´
 		} else {
 			
 			for( String t : cartcount ) {
@@ -485,7 +485,7 @@ public class SpringDAO_Im implements SpringDAO {
 	}
 	
 	// insertorder ----------------------------------------------------------
-	// order_T¿¡ °ª ³Ö±â
+	// order_Tì— ê°’ ë„£ê¸°
 	@Override
 	public void insertorder(SpringVO vo, String id, String now ) throws Exception {
 		
@@ -494,12 +494,12 @@ public class SpringDAO_Im implements SpringDAO {
 	}
 	
 	// ordered ----------------------------------------------------------
-	//order_T °ª Áß °¡Àå ÃÖ±Ù¿¡ ³ÖÀº °ªÇÏ³ª¸¦ ºÒ·¯¿È
-	// ¼öÁ¤ Áß
+	//order_T ê°’ ì¤‘ ê°€ì¥ ìµœê·¼ì— ë„£ì€ ê°’í•˜ë‚˜ë¥¼ ë¶ˆëŸ¬ì˜´
+	// ìˆ˜ì • ì¤‘
 	@Override
 	public List<SpringVO> ordered( Integer forcount, String id ) throws Exception {
 		
-		// pname °¡Á®¿À´Â query
+		// pname ê°€ì ¸ì˜¤ëŠ” query
 		RowMapper<SpringVO> rm2 = new RowMapper<SpringVO>() {
 
 			@Override
@@ -511,7 +511,7 @@ public class SpringDAO_Im implements SpringDAO {
 			}
 		};
 	
-		// °¡Àå ÃÖ±Ù order³»¿ª °¡Á®¿À´Â query
+		// ê°€ì¥ ìµœê·¼ orderë‚´ì—­ ê°€ì ¸ì˜¤ëŠ” query
 		RowMapper<SpringVO> rm = new RowMapper<SpringVO>() {
 
 			@Override
@@ -552,7 +552,7 @@ public class SpringDAO_Im implements SpringDAO {
 	
 
 	
-	// »ç¿ëÀÚ µî·Ï ¸Ş¼Òµå  2022-02-03
+	// ì‚¬ìš©ì ë“±ë¡ ë©”ì†Œë“œ  2022-02-03
 		@Override
 		public int register(SpringVO vo, String mode) throws Exception {
 			PreparedStatementSetter pss = null;
@@ -607,10 +607,10 @@ public class SpringDAO_Im implements SpringDAO {
 			return uc;
 		}
 		
-		// ·Î±×ÀÎÀ» ¼öÇàÇÏ´Â ¸Ş¼Òµå 2022-02-03
-		// È¸¿ø°¡ÀÔ ½Ã sha256 ¹æ½ÄÀ¸·Î ºñ¹Ğ¹øÈ£ ¾ÏÈ£È­/·Î±×ÀÎ ½Ã º¹È£È­ÇÏ´Â ¹æ½Ä °í·ÁÇÏ´Â Áß
-		// ±×·¸°Ô µÇ¸é, ºñ¹Ğ¹øÈ£ ÇÊµåÀÇ ±æÀÌ 64±æÀÌ·Î º¯°æÇÊ¿ä 
-		// °ü¸®ÀÚ ·Î±×ÀÎ Ã³¸® Ãß°¡ 2022-02-04
+		// ë¡œê·¸ì¸ì„ ìˆ˜í–‰í•˜ëŠ” ë©”ì†Œë“œ 2022-02-03
+		// íšŒì›ê°€ì… ì‹œ sha256 ë°©ì‹ìœ¼ë¡œ ë¹„ë°€ë²ˆí˜¸ ì•”í˜¸í™”/ë¡œê·¸ì¸ ì‹œ ë³µí˜¸í™”í•˜ëŠ” ë°©ì‹ ê³ ë ¤í•˜ëŠ” ì¤‘
+		// ê·¸ë ‡ê²Œ ë˜ë©´, ë¹„ë°€ë²ˆí˜¸ í•„ë“œì˜ ê¸¸ì´ 64ê¸¸ì´ë¡œ ë³€ê²½í•„ìš” 
+		// ê´€ë¦¬ì ë¡œê·¸ì¸ ì²˜ë¦¬ ì¶”ê°€ 2022-02-04
 		@Override
 		public boolean login(SpringVO vo, String mode) throws Exception {
 			 String sql = null;
@@ -642,15 +642,15 @@ public class SpringDAO_Im implements SpringDAO {
 			 return res;
 		}
 		
-		// È¸¿ø Á¤º¸¿Í ÇöÀç ÁÖ¹® »óÈ²À» °¡Á®¿À´Â ÆäÀÌÁö  2022-02-04
-		// ÆÇ¸ÅÀÚ È¸¿øÁ¤º¸ Á¶È¸ Ãß°¡ 2022-02-05
+		// íšŒì› ì •ë³´ì™€ í˜„ì¬ ì£¼ë¬¸ ìƒí™©ì„ ê°€ì ¸ì˜¤ëŠ” í˜ì´ì§€  2022-02-04
+		// íŒë§¤ì íšŒì›ì •ë³´ ì¡°íšŒ ì¶”ê°€ 2022-02-05
 		@Override
 		public SpringVO findMypage(String userid, String mode) throws Exception {
 			String sql = null;
 			RowMapper<SpringVO> rm = null;
 			
 			if(mode.equals("cus")) {
-				//È¸¿ø Á¤º¸
+				//íšŒì› ì •ë³´
 				sql = "select * from customer_T where cusid=?";
 				 rm = new RowMapper<SpringVO>() {
 						@Override
@@ -688,10 +688,10 @@ public class SpringDAO_Im implements SpringDAO {
 			return vo;
 		}
 		
-		// ÁÖ¹® Á¤º¸ °¡Á®¿À±â  2022-02-04
-		// Date Çü½ÄÀ¸·Î ÇÏ±â·Î ÇÏ¿´À¸³ª, Àß »ç¿ëµÇÁö ¾Ê°í deprecatedµÈ ¸Ş¼Òµå°¡ ¸¹À½...
-		// µû·Î ½Ã°£À» »ç¿ëÇÒ °ÍÀÌ ¾Æ´Ï¸é »ç¿ëÇÏÁö ¾Ê´Â Æí
-		// µû¶ó¼­ ´Ù½Ã StringÇüÀ¸·Î ÀüÈ¯
+		// ì£¼ë¬¸ ì •ë³´ ê°€ì ¸ì˜¤ê¸°  2022-02-04
+		// Date í˜•ì‹ìœ¼ë¡œ í•˜ê¸°ë¡œ í•˜ì˜€ìœ¼ë‚˜, ì˜ ì‚¬ìš©ë˜ì§€ ì•Šê³  deprecatedëœ ë©”ì†Œë“œê°€ ë§ìŒ...
+		// ë”°ë¡œ ì‹œê°„ì„ ì‚¬ìš©í•  ê²ƒì´ ì•„ë‹ˆë©´ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ” í¸
+		// ë”°ë¼ì„œ ë‹¤ì‹œ Stringí˜•ìœ¼ë¡œ ì „í™˜
 		public List<SpringVO> findMyOrder(String id) throws Exception{
 			
 			String sql = "select * from order_T where cusid=?";
@@ -719,8 +719,8 @@ public class SpringDAO_Im implements SpringDAO {
 			return shipments;
 		}
 		
-		//ÆÇ¸ÅÀÚ ÆÇ¸ÅÀÌ·Â ºÒ·¯¿À±â 2022-02-06
-		//Ç°Àı(count=0)ÀÎ °æ¿ì¸¦ Á¦¿ÜÇÑ »óÇ°¸¸ ºÒ·¯¿Í ÆÇ¸ÅÀÚ ÆäÀÌÁö¿¡¼­ º¸¿©ÁÖ±â 2022-02-08
+		//íŒë§¤ì íŒë§¤ì´ë ¥ ë¶ˆëŸ¬ì˜¤ê¸° 2022-02-06
+		//í’ˆì ˆ(count=0)ì¸ ê²½ìš°ë¥¼ ì œì™¸í•œ ìƒí’ˆë§Œ ë¶ˆëŸ¬ì™€ íŒë§¤ì í˜ì´ì§€ì—ì„œ ë³´ì—¬ì£¼ê¸° 2022-02-08
 		public List<SpringVO> findMySell(String userid) throws Exception{
 			String sql = "select * from products_T where count>0 and selid=?";
 			
@@ -745,7 +745,7 @@ public class SpringDAO_Im implements SpringDAO {
 			return sellList;
 		}
 		
-		// ¸ğµç °øÁö »çÇ×À» ºÒ·¯¿À´Â ¸Ş¼Òµå 2022-02-04
+		// ëª¨ë“  ê³µì§€ ì‚¬í•­ì„ ë¶ˆëŸ¬ì˜¤ëŠ” ë©”ì†Œë“œ 2022-02-04
 		@Override
 		public List<SpringVO> findNotice() throws Exception {
 			RowMapper<SpringVO> rm = new RowMapper<SpringVO>() {
@@ -757,7 +757,7 @@ public class SpringDAO_Im implements SpringDAO {
 						vo.setTitle(rs.getString("title"));
 					}
 					else {
-						vo.setTitle("Á¦¸ñ¾øÀ½");
+						vo.setTitle("ì œëª©ì—†ìŒ");
 					}
 					vo.setContent(rs.getString("content"));
 					SimpleDateFormat fDay = new SimpleDateFormat("yyyy-MM-dd");
@@ -770,7 +770,7 @@ public class SpringDAO_Im implements SpringDAO {
 			return notices;
 		}
 		
-		// °øÁö»çÇ×ÀÇ ¼¼ºÎ»çÇ×À» °¡Á®¿À´Â ¸Ş¼Òµå 2022-02-04
+		// ê³µì§€ì‚¬í•­ì˜ ì„¸ë¶€ì‚¬í•­ì„ ê°€ì ¸ì˜¤ëŠ” ë©”ì†Œë“œ 2022-02-04
 		@Override
 		public SpringVO findNDetail(int pnum) throws Exception {
 			
@@ -791,9 +791,9 @@ public class SpringDAO_Im implements SpringDAO {
 			SpringVO vo = jdbcTemplate.queryForObject(sql, new Object[] {pnum}, rm);
 			return vo;
 		}
-		//°ü¸®ÀÚ¸¸ °øÁö»çÇ× ÀÛ¼º °¡´É 2022-02-04
-		// °ü¸®ÀÚ Å×ÀÌºí º°µµ·Î »ı¼º(¾ÆÀÌµğ, ºñ¹Ğ¹øÈ£, °ü¸®ÀÚ¸í)
-		// ·Î±×ÀÎ ºÎºĞ ¼öÁ¤ ÇÊ¿ä...?
+		//ê´€ë¦¬ìë§Œ ê³µì§€ì‚¬í•­ ì‘ì„± ê°€ëŠ¥ 2022-02-04
+		// ê´€ë¦¬ì í…Œì´ë¸” ë³„ë„ë¡œ ìƒì„±(ì•„ì´ë””, ë¹„ë°€ë²ˆí˜¸, ê´€ë¦¬ìëª…)
+		// ë¡œê·¸ì¸ ë¶€ë¶„ ìˆ˜ì • í•„ìš”...?
 		@Override
 		public int addNotice(SpringVO vo) throws Exception {
 			// TODO Auto-generated method stub
@@ -818,7 +818,7 @@ public class SpringDAO_Im implements SpringDAO {
 			return 1;
 		}
 		
-		// ¸¶ÀÌÆäÀÌÁö ¼öÁ¤ 2022-02-04
+		// ë§ˆì´í˜ì´ì§€ ìˆ˜ì • 2022-02-04
 		@Override
 		public int modify(SpringVO vo, String mode) throws Exception {
 			String sql = null;
@@ -855,7 +855,7 @@ public class SpringDAO_Im implements SpringDAO {
 			return uc;
 		}
 		
-		//°ü¸®ÀÚ ºñ¹Ğ¹øÈ£ º¯°æ 2022-02-07
+		//ê´€ë¦¬ì ë¹„ë°€ë²ˆí˜¸ ë³€ê²½ 2022-02-07
 		public int chpw(String pw) throws Exception{
 			
 			PreparedStatementSetter pss = new PreparedStatementSetter() {
@@ -871,8 +871,8 @@ public class SpringDAO_Im implements SpringDAO {
 			return uc;
 		}
 		
-		//½ÂÀÎ ´ë±â ¸ñ·Ï
-		// ½ÂÀÎ´ë±â ¸ñ·ÏÀ» ºÒ·¯¿À´Â ¸Ş¼Òµå 2022-02-07
+		//ìŠ¹ì¸ ëŒ€ê¸° ëª©ë¡
+		// ìŠ¹ì¸ëŒ€ê¸° ëª©ë¡ì„ ë¶ˆëŸ¬ì˜¤ëŠ” ë©”ì†Œë“œ 2022-02-07
 		@Override
 		public List<SpringVO> findWaiting() throws Exception {
 			
@@ -897,7 +897,7 @@ public class SpringDAO_Im implements SpringDAO {
 			return wList;
 		}
 		
-		// ÆÇ¸ÅÀÚ ½ÂÀÎ 2022-02-07
+		// íŒë§¤ì ìŠ¹ì¸ 2022-02-07
 		public int valid(char res, String selid) throws Exception{
 			
 			int uc = 0;
@@ -921,8 +921,8 @@ public class SpringDAO_Im implements SpringDAO {
 			return uc;
 		}
 		
-		// QnA ¸ñ·ÏÀ» ºÒ·¯¿À´Â ¸Ş¼Òµå 2022-02-08
-		// ´äº¯À» ÇÏ±â Àü¿¡´Â AnswerÀÌ NULLÀÏ ¼ö ¹Û¿¡ ¾ø¾î qna_T Å×ÀÌºíÀÇ answer ÇÊµå¸¦ not null¿¡¼­ null·Î º¯°æ
+		// QnA ëª©ë¡ì„ ë¶ˆëŸ¬ì˜¤ëŠ” ë©”ì†Œë“œ 2022-02-08
+		// ë‹µë³€ì„ í•˜ê¸° ì „ì—ëŠ” Answerì´ NULLì¼ ìˆ˜ ë°–ì— ì—†ì–´ qna_T í…Œì´ë¸”ì˜ answer í•„ë“œë¥¼ not nullì—ì„œ nullë¡œ ë³€ê²½
 		// alter table qna_T modify column answer varchar(500);
 		@Override
 		public List<SpringVO> findQnA(String id) throws Exception {
@@ -968,7 +968,7 @@ public class SpringDAO_Im implements SpringDAO {
 			return ls;
 		}
 		
-		// ´äº¯µî·ÏÇÏ±â 2022-02-08
+		// ë‹µë³€ë“±ë¡í•˜ê¸° 2022-02-08
 		@Override
 		public int answer(SpringVO vo) throws Exception{
 			String sql = "update qna_T set answer=? where qno=?";
@@ -985,8 +985,8 @@ public class SpringDAO_Im implements SpringDAO {
 			return uc;
 		}
 		
-		// ÁÖ¹®È®Á¤ ¸Ş¼Òµå 2022-02-08
-		// order_T date¸í -> odate·Î º¯°æ 2022-02-08
+		// ì£¼ë¬¸í™•ì • ë©”ì†Œë“œ 2022-02-08
+		// order_T dateëª… -> odateë¡œ ë³€ê²½ 2022-02-08
 		@Override
 		public int confirmOrder(int odnum) throws Exception {
 			
@@ -1029,7 +1029,7 @@ public class SpringDAO_Im implements SpringDAO {
 			return uc;
 		}
 		
-		// ÃÑ ÁÖ¹® ³»¿ª ºÒ·¯¿À±â 2022-02-08
+		// ì´ ì£¼ë¬¸ ë‚´ì—­ ë¶ˆëŸ¬ì˜¤ê¸° 2022-02-08
 		public List<SpringVO> findOrderAll(String cusid) throws Exception{
 			
 			String sql = "select * from orderall_T where cusid=?";
@@ -1060,7 +1060,7 @@ public class SpringDAO_Im implements SpringDAO {
 			return orderAll;
 		}
 		
-		// pid¸¦ »óÇ°¸íÀ¸·Î ¹Ù²Ù±â 2022-02-08
+		// pidë¥¼ ìƒí’ˆëª…ìœ¼ë¡œ ë°”ê¾¸ê¸° 2022-02-08
 		private String changeToProducts(int pid) throws Exception{
 			
 			String sql = "select pname from products_T where pid=?";
@@ -1069,7 +1069,7 @@ public class SpringDAO_Im implements SpringDAO {
 			return pname;
 		}
 		
-		// ¾ÆÀÌµğ/ºñ¹Ğ¹øÈ£ Ã£±â ¼öÇà - ¼öÁ¤¿Ï·á - 2022-02-09
+		// ì•„ì´ë””/ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸° ìˆ˜í–‰ - ìˆ˜ì •ì™„ë£Œ - 2022-02-09
 		@Override
 		public String requestFind(String kind, SpringVO vo) throws Exception {
 			String sql = null;
@@ -1134,7 +1134,7 @@ public class SpringDAO_Im implements SpringDAO {
 			return res;
 		}
 		
-		//Ç°Àı Àû¿ë 2022-02-08
+		//í’ˆì ˆ ì ìš© 2022-02-08
 		@Override
 		public int requestSoldout(int pid) throws Exception{
 			
@@ -1145,7 +1145,7 @@ public class SpringDAO_Im implements SpringDAO {
 			return uc;
 		}
 		
-		//¸®ºä ³²±â±â 2022-02-09
+		//ë¦¬ë·° ë‚¨ê¸°ê¸° 2022-02-09
 		@Override
 		public int uploadRev(SpringVO vo, String id) throws Exception {
 			
@@ -1165,19 +1165,18 @@ public class SpringDAO_Im implements SpringDAO {
 			return uc;
 		}
 		
-		//¸®ºä¸¦ °¡Á®¿À´Â ¸Ş¼Òµå 2022-02-09
+		//ë¦¬ë·°ë¥¼ ê°€ì ¸ì˜¤ëŠ” ë©”ì†Œë“œ 2022-02-09
+		// ìˆ˜ì • 2022-02-21
 		public List<SpringVO> reviews(String kind, String id) throws Exception{
 			String sql = null;
 			
 			if(kind.equals("cus")) {
 				sql = "select * from review_T where cusid=?";
+				
 			}
 			else if(kind.equals("sel")) {
-				 sql = "select pid from products_T where selid=?";
-				 //sql = "select * from review_T where answer is null and pid=(select pid from products_T where selid=?)";
+				sql = "select * from review_T where answer is null and pid in (select pid from products_T where selid=?)";
 			}
-			
-			List<SpringVO> ls = new ArrayList<SpringVO>();
 			
 			RowMapper<SpringVO> rowMapper = new RowMapper<SpringVO>() {
 				@Override
@@ -1195,31 +1194,15 @@ public class SpringDAO_Im implements SpringDAO {
 					} catch (Exception e) {
 						
 					}
-					ls.add(vo);
 					
 					return vo;
 				}	
 			};
 			
-			RowMapper<SpringVO> rowMapper2 = new RowMapper<SpringVO>() {
-
-				@Override
-				public SpringVO mapRow(ResultSet rs, int idx) throws SQLException {
-
-					SpringVO vo = new SpringVO();
-					
-					jdbcTemplate.query( "select * from review_T where answer is null and pid=?", rowMapper, rs.getInt("pid"));
-					
-					return vo;
-				}
-			};
-			
-			jdbcTemplate.query(sql, rowMapper2, id);
-			
-			return ls;
+			return jdbcTemplate.query(sql, new Object[] {id}, rowMapper);
 		}
 		
-		//¸®ºä ´äº¯À» ÀÛ¼ºÇÏ´Â ¸Ş¼Òµå 2022-02-09
+		//ë¦¬ë·° ë‹µë³€ì„ ì‘ì„±í•˜ëŠ” ë©”ì†Œë“œ 2022-02-09
 		public int ansRev(SpringVO vo) throws Exception{
 			String sql = "update review_T set answer=? where rnum=?";
 			
