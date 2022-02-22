@@ -37,4 +37,4 @@
 - IDE : Eclipse
 - FTP Service : FileZilla, Putty
 - 개발 OS: WIndows
-- 권장 브라우저 : Chrome
+- 권장 브라우저 : Chrome  
