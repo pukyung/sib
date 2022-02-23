@@ -1,0 +1,183 @@
+@font-face {
+  font-family: 'surroundAir';
+  src: url("../font/Cafe24SsurroundAir.ttf");
+}
+
+html{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  width: 100%;
+}
+
+*{
+  font-family: 'surroundAir', Times,serif;
+  color: #464646;
+}
+
+/* 페이지 제목 */
+#head{
+  height: 80px;
+  width: 70%;
+  line-height: 50px;
+  border-bottom: 1px solid #05c46b;
+  margin-bottom: 30px;
+  font-size: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* 선택하기 */
+#sel{
+  width: 70%;
+  height: 300px;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 2px solid #05c46b;
+  border-bottom: 2px solid #05c46b;
+}
+
+#선택하기 td{
+  text-align: center;
+  padding: 2px;
+}
+
+.who-btn{
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#regi:hover{
+  box-shadow: 1px 1px 5px 5px #f3a683;
+}
+
+#pati:hover{
+  box-shadow: 1px 1px 5px 5px #786fa6;
+}
+
+#body{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#참여자, #등록자{
+  display:none;
+}
+
+/* 참여자 등록 절차 */
+#my_modal, #modal{
+  width: 50%;
+  padding: 20px 40px;
+  background-color: #fefefe;
+  border: 1px solid #888;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right:auto;
+  display: none;
+}
+
+h4{
+  font-size: 18px;
+}
+
+.close_btn{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#stage1, #select{
+  width: 100%;
+  height: 300px;
+}
+
+#stage1 input[type="text"],#select input[type="text"]{
+  margin-bottom: 20px;
+  border: 1px solid #05c46b;
+  border-radius: 3px;
+  width: 30%;
+  height: 25px;
+}
+
+.txt_area,.btn_area{
+  text-align: center;
+}
+
+.btn_area input[type="button"], input[type="submit"]{
+  width: 80px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: #05c46b;
+  border: none;
+  color: white;
+}
+
+/* stage2 */
+#stage2{
+  width: 100%;
+  height: 300px;
+  display: none;
+}
+
+#stage2 table{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+#stage2 table td{
+  padding: 10px;
+}
+
+#stage2 input[type="text"]{
+  height: 25px;
+  border-radius: 3px;
+  border: 1px solid #05c46b;
+}
+
+.what{
+  font-weight: bold;
+}
+
+/*stage3*/
+#stage3{
+  height: 350px;
+  display: none;
+}
+
+#stage3 table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+#stage3 table td{
+  padding: 10px;
+  text-align: center;
+}
+
+#city,#state{
+  width: 80%;
+}
+
+#stage3 input[type="text"]{
+  border: none;
+  border-bottom: 2px solid #05c46b;
+  height: 30px;
+  font-size: 20px;
+}
+
+#stage3 input[type="text"]:focus{
+  outline: none;
+}
