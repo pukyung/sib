@@ -21,8 +21,10 @@ h3{
 }
 
 .ovy {
-	overflow-y:scroll;
-	margin : 20px 0;
+	height:300px;
+	overflow:auto;
+	overflow-x:hidden;
+	/*margin : 20px 0;*/
 }
 
 .body {
@@ -47,6 +49,7 @@ h3{
   color:#05c46b;
   font-size: 20px;
 }
+
 /* head */
 #head{
   height: 80px;
@@ -130,7 +133,7 @@ nav #main{
   font-weight: bold;
 }
 
-#selllist table tbody td{
+.topb{
   border-top: 1px solid #808e9b;
   text-align: center;
   padding: 10px;
@@ -227,7 +230,7 @@ nav #main{
   padding: 10px;
 }
 
-#rev, #ans, #soldout, #ansbtn{
+#rev, #ans, .soldout, .btns, .btn{
   border: none;
   height: 40px;
   width:80px;
@@ -236,7 +239,7 @@ nav #main{
   color: white;
 }
 
-#writeAns{
+.writeAns{
   border: 1px solid #05c46b;
   border-radius: 0px 0px 0px 30px;
   width: 100%;

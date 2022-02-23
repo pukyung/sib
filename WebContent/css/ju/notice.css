@@ -43,19 +43,19 @@ h1 {
   float: right;
 }
 
-/* 공지사항 */
-#body{
-  height: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .body {
 	width : 70%;
+	height:700px;
 	margin : auto;
 }
 
-.dv {
+/* 공지사항 */
+#body{
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow:auto;
+  overflow-x:hidden;
 }
 
 #notice{
@@ -102,4 +102,8 @@ table{
 
 .import-info, .normal-info{
   font-size: 15px;
+}
+
+.delete-link{
+	font-size:15px;
 }

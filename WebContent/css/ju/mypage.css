@@ -232,10 +232,6 @@ nav #main{
   padding: 10px;
 }
 
-.score{
-  margin-bottom: 15px;
-}
-
 .review-area{
   width: 70%;
   margin-left: auto;
@@ -249,6 +245,33 @@ nav #main{
   border: 0.5px solid #d2dae2;
   resize: none;
 }
+
+ .star {
+ 	display:inline;
+    position: relative;
+    font-size: 2rem;
+    color: #ddd;
+    padding:0px;
+    margin:0px;
+  }
+  
+  .drag {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+ .rate{
+    width: 0;
+    position: absolute; 
+    left: 0;
+    color: #f7b731;
+    overflow: hidden;
+    pointer-events: none;
+  }
 
 .content:focus{
   outline: 2px solid #05c46b;
@@ -309,7 +332,9 @@ nav #main{
 }
 
 .ovy {
-	overflow-y : scroll;
+	height:300px;
+	overflow:auto;
+	overflow-x : hidden;
 }
 
 /*==========================================================================================*/
