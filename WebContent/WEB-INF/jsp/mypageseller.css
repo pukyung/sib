@@ -1,0 +1,248 @@
+html{
+  width: 100%;
+}
+
+*{
+  margin:0px;
+  font-family: 'surroundAir', Times,serif;
+}
+
+h3{
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #464646;
+}
+/* class */
+/*제목 */
+.content-title{
+  border-bottom: 2px solid #05c46b;
+  width: 90%;
+  margin-left: 50px;
+}
+
+.ovy {
+	height:300px;
+	overflow:auto;
+	overflow-x:hidden;
+	/*margin : 20px 0;*/
+}
+
+.body {
+	width : 60%;
+	margin-left : 20%;
+	padding-top: 200px;
+}
+
+.th{
+  border-bottom: 2px solid #808e9b;
+}
+
+.inside-td{
+  border-right: 1px solid #808e9b;
+}
+
+.inside-th{
+  border-right: 1px solid #808e9b;
+}
+
+.dir{
+  color:#05c46b;
+  font-size: 20px;
+}
+
+/* head */
+#head{
+  height: 80px;
+  border-bottom: 2px solid #05c46b;
+  padding-left: 50px;
+  line-height: 80px;
+  margin:auto;
+}
+
+nav{
+  float: right;
+}
+
+nav #main{
+  border: none;
+  height: 40px;
+  width:80px;
+  border-radius: 20px 20px;
+  background-color: #05c46b;
+  color: white;
+}
+
+#modify{
+  border: none;
+  height: 40px;
+  width:80px;
+  border-radius: 20px 20px;
+  background-color: #05c46b;
+  color: white;
+  margin-left: 10px;
+}
+
+/* body */
+#userInfo{
+  height: 300px;
+  padding: 10px;
+  border:1.5px solid white;
+  border-radius: 4px;
+}
+
+#userInfo table{
+  width: 70%;
+  border-collapse: collapse;
+  margin-left: 50px;
+}
+
+#userInfo .label{
+  font-weight: bold;
+}
+
+#userInfo .info{
+  font-weight: lighter;
+}
+
+#userInfo td{
+  padding: 10px;
+  font-size: 20px;
+}
+
+/*판매 이력*/
+#selllist{
+  padding:10px;
+  height: 350px;
+  border:1.5px solid white;
+  border-radius: 4px;
+}
+
+#selllist table{
+  border-collapse: collapse;
+  margin-left: 50px;
+  margin-top: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#selllist table thead td{
+  padding: 10px;
+  border-bottom: 1px solid #808e9b;
+  text-align: center;
+  font-weight: bold;
+}
+
+.topb{
+  border-top: 1px solid #808e9b;
+  text-align: center;
+  padding: 10px;
+}
+
+/* 리뷰 현황 */
+#revlist{
+  height: 450px;
+  padding: 10px;
+  border:2px solid white;
+}
+
+#revlist table{
+  border-collapse: collapse;
+  width: 90%;
+  margin-right:auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+#revlist table td{
+  padding: 10px;
+}
+
+.ansbox{
+  border: 1px solid #05c46b;
+  border-radius: 0px 0px 0px 30px;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+#answer-area{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  resize: none;
+}
+
+.answer{
+  width: 100%;
+  height: 90px;
+  border: 0.5px solid #d2dae2;
+  resize: none;
+}
+
+#answer:focus{
+  outline: 2px solid #05c46b;
+  border-radius: 5px;
+}
+
+#revlist table thead td{
+  padding: 10px;
+  border-bottom: 1px solid #808e9b;
+  text-align: center;
+  font-weight: bold;
+}
+
+#revlist table tbody td{
+  border-top: 1px solid #808e9b;
+  text-align: center;
+  padding: 10px;
+}
+/*qna*/
+#qnalist{
+  height: 450px;
+  padding: 10px;
+  border:2px solid white;
+}
+
+#qnalist table{
+  border-collapse: collapse;
+  width: 90%;
+  margin-right:auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+#qnalist table td{
+  padding: 10px;
+}
+
+#qnalist table thead td{
+  padding: 10px;
+  border-bottom: 1px solid #808e9b;
+  text-align: center;
+  font-weight: bold;
+}
+
+#qnalist table tbody td{
+  border-top: 1px solid #808e9b;
+  text-align: center;
+  padding: 10px;
+}
+
+#rev, #ans, .soldout, .btns, .btn{
+  border: none;
+  height: 40px;
+  width:80px;
+  border-radius: 20px 20px;
+  background-color: #05c46b;
+  color: white;
+}
+
+.writeAns{
+  border: 1px solid #05c46b;
+  border-radius: 0px 0px 0px 30px;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}

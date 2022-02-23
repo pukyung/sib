@@ -8,6 +8,13 @@
 <link href="/project/css/ju/mypage.css" rel="stylesheet" type="text/css"/>
 <link href="/project/css/jeong/hanho.css" rel="stylesheet" type="text/css" />
 <script>
+function drawStar(num){
+	  let target = document.getElementById(num+"drag");
+	  let len = target.value * 20;
+	  document.getElementById(num+"rate").style.width = len+'%';
+	  document.getElementById(num+"lab").innerText = '평점 : '+len / 20;
+}
+
 function show(id){
     let target = document.getElementById(id);
     let btn = document.getElementById(id+'btn');
@@ -20,25 +27,13 @@ function show(id){
       btn.value = '리뷰 남기기';
     }
   }
-
+     
   window.onload = function() {
 		let revs = document.getElementsByClassName("reviews");
 	      for(let i=0;i<revs.length;i++){
 	        revs[i].style.display = 'none';
 	      }
 	      
-		let rows = document.getElementById("orderall").getElementsByTagName(
-				"tr");
-		let len = (rows.length - 1) / 2;
-		let more = document.getElementById("more");
-		if (len > 5) {
-			more.style.display = 'show';
-			for (var r = 5; r < rows.length; r++) {
-				rows[r].style.display = 'none';
-			}
-		} else {
-			more.style.display = 'none';
-		}
 	}
 	
 	function loginStatus(kind){
@@ -77,6 +72,7 @@ function show(id){
 	function hide(odnum){
 		document.getElementById(odnum+'btn').style.display = 'none';
 	}
+
 </script>
 <title>심이베</title>
 </head>
@@ -230,19 +226,13 @@ function show(id){
 	                <form method="post" action="/project/writeRev.pj">
 	                  <!-- 평점 부분은 후에 별점으로 대체할 예정 -->
 	                  <!-- 스크롤 뷰도 고려중.. -->
-	                  <label for="score">평점주기 </label><select class="score" name="score">
-	                    <option value="1.0">1.0</option>
-	                    <option value="1.5">1.5</option>
-	                    <option value="2.0">2.0</option>
-	                    <option value="2.5">2.5</option>
-	                    <option value="3.0">3.0</option>
-	                    <option value="3.5">3.0</option>
-	                    <option value="4.0">4.0</option>
-	                    <option value="4.5">4.5</option>
-	                    <option value="5.0">5.0</option>
-	                  </select>
 	                  <div class="review-area">
-	                    <label for="content">리뷰</label><br/>
+	                    <label for="content" id="${t.odanum}lab">리뷰</label><br/>
+	                    	<span class="star">
+  								★★★★★
+ 								<span class="rate" id="${t.odanum}rate">★★★★★</span>
+  								<input type="range" class="drag" id="${t.odanum}drag" name="score" oninput="drawStar('${t.odanum}')" value="1" step="0.5" min="0" max="5">
+							</span><br/>
 	                    <textarea name="content" class="content" placeholder="내용을 입력하세요"></textarea><br/>
 	                  </div>
 	                  <div class="submit-area">

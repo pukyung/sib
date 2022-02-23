@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'surroundAir';
+  src: url("../font/Cafe24SsurroundAir.ttf");
+}
+
+html{
+  width:100%;
+}
+
+*{
+  font-family: 'surroundAir', Times,serif;
+  color: #464646;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1 {
+	margin : 0;
+}
+
+/* 클래스 */
+/* 버튼 */
+.btn{
+  width: 60px;
+  height: 30px;
+  border: none;
+  border-radius: 30px;
+  background-color: #05C466;
+  color: white;
+  font-size: 12px;
+}
+/* 화면 제목 */
+#title{
+  border-bottom: 4px solid #05C466;
+  padding-top : 5%;
+  font-size: 15px;
+}
+
+#goto-main{
+	margin-top:10px;
+  float: right;
+}
+
+.body {
+	width : 70%;
+	height:700px;
+	margin : auto;
+}
+
+/* 공지사항 */
+#body{
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow:auto;
+  overflow-x:hidden;
+}
+
+#notice{
+  width: 100%;
+	background-color : #55c47f21;
+}
+
+#header{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+table{
+	border-collapse : collapse;
+	width:100%;
+}
+
+.important{
+  border-bottom: 2px solid #dfe6e9;
+  background-color: #95afc0;
+
+}
+
+.important a:hover{
+	color:#e17055;
+}
+
+.normal a:hover{
+	color:#74b9ff;	
+}
+
+.import-td{
+  color:white;	
+}
+
+.import-td, .normal-td{
+  border-bottom: 1px solid #dfe6e9;
+  padding: 10px;
+}
+
+.import-title, .normal-title{
+  font-size: 24px;
+}
+
+.import-info, .normal-info{
+  font-size: 15px;
+}
+
+.delete-link{
+	font-size:15px;
+}

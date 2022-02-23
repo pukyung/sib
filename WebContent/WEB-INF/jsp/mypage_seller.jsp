@@ -9,34 +9,40 @@
 <link href="/project/css/jeong/hanho.css" rel="stylesheet" type="text/css" />
 <script>
     window.onload = function(){
-      let leave = document.getElementById('leave');
-      let qnaans = document.getElementById('qnaans');
-      let b = true;
-      let c = true;
-      leave.style.display = 'none';
-      qnaans.style.display = 'none';
-
-      document.getElementById('rev').onclick = function(){
-        if(b==true){
-          leave.style.display = '';
-          b=!b;
-        }
-        else{
-          leave.style.display = 'none';
-          b=!b;
-        }
+      let leave = document.getElementsByClassName('leave');
+      for(let i=0;i<leave.length;i++){
+    	  leave[i].style.display = 'none';
       }
-
-      document.getElementById('ans').onclick = function(){
-        if(c==true){
-          qnaans.style.display = '';
-          c=!c;
-        }
-        else{
-          qnaans.style.display = 'none';
-          c=!c;
-        }
-      }
+    }
+    
+    function toggle(rnum){
+    	let target = document.getElementById(rnum);
+    	let btn = document.getElementById(rnum+'btn');
+    	
+    	if(btn.value=="답변남기기"){
+    		target.style.display = '';
+    		btn.value="취소";
+    	}
+    	else{
+    		target.style.display = 'none';
+    		btn.value="답변남기기";
+    	}
+    	
+    }
+    
+    function toggle2(qno){
+    	let target = document.getElementById(qno);
+    	let btn = document.getElementById(qno+'btn');
+    	
+    	if(btn.value=="답변하기"){
+    		target.style.display = '';
+    		btn.value="취소";
+    	}
+    	else{
+    		target.style.display = 'none';
+    		btn.value="답변남기기";
+    	}
+    	
     }
     
     function loginStatus(kind){
@@ -141,11 +147,12 @@
       </table>
     </div>
     <!-- 판매 이력 -->
-    <div id="selllist" class="overy">
+    <div id="selllist">
       <div class="content-title">
-        <h3>🧾판매 이력</h3>
+        <h3>🧾판매 중이에요</h3>
       </div>
-      <table>
+      <div class="ovy">
+      	<table>
         <thead>
           <tr class="th">
             <td class="inside-th">상품 번호</td>
@@ -158,23 +165,25 @@
         </thead>
         <tbody>
           <q:forEach items="${sellList}" var="t">
-            <tr id="${t.pid}" onload=""><!--inspectCount(${t.pid},${t.pcount})-->
+            <tr id="${t.pid}"  class="topb">
               <td class="inside-td">${t.pid}</td>
               <td class="inside-td">${t.pname}</td>
               <td class="inside-td">${t.price}/<span id="unit">${t.unit}</span></td>
               <td class="inside-td">${t.shipment}</td>
               <td class="inside-td">${t.pcount}</td>
-              <td><a href="/project/soldout.pj?pid=${t.pid}"><input type="button" id="soldout" value="품절"/></a></td>				
+              <td><a href="/project/soldout.pj?pid=${t.pid}"><input type="button" class="soldout" value="품절"/></a></td>				
             </tr>
           </q:forEach>
         </tbody> 
       </table>
+      </div>
     </div>
     <!-- 상품 리뷰 -->
-    <div id="revlist" class="overy">
+    <div id="revlist">
       <div class="content-title">
         <h3>🌠답변을 기다리는 리뷰가 있어요</h3>
       </div>
+      <div class="ovy">
       <table>
         <thead>
           <tr class="th">
@@ -189,16 +198,16 @@
         </thead>
         <tbody>
           <q:forEach items="${reviews}" var="t">
-            <tr>
+            <tr class="topb">
               <td class="inside-td">${t.rnum}</td>
               <td class="inside-td">${t.content}</td>
               <td class="inside-td">${t.score}</td>
               <td class="inside-td">${t.pid}</td>
               <td class="inside-td">${t.pname}</td>
               <td class="inside-td">${t.cusid}</td>
-              <td><input type="button" id="rev" value="답변남기기"/></td>
+              <td><input type="button" id="${t.rnum}btn" class="btns" value="답변남기기" onclick="toggle('${t.rnum}')"/></td>
             </tr>
-            <tr id="leave">
+            <tr class="leave" id="${t.rnum}">
               <td class="writeRev"  colspan="6">
                 <div class="dir">
                   <h4>답변 남기기</h4>
@@ -209,7 +218,7 @@
                       <label for="content">답변</label><br/>
                       <textarea placeholder="내용을 입력하세요" class="answer" name="answer" rows="5" cols="33"></textarea>
                     </div>
-                    <input type="submit" id="btn" value="등록하기"/>
+                    <input type="submit" class="btn" value="등록하기"/>
                     <input type="hidden" name="rnum" value="${t.rnum}">
                   </form>
                 </div>
@@ -218,13 +227,15 @@
           </q:forEach>
         </tbody>
       </table>
+      </div>
     </div>
     <!-- 상품 질문 -->
-    <div id="qnalist" class=" overy"">
+    <div id="qnalist">
       <div class="content-title">
         <h3>👐🏻QnA</h3>
       </div>
-      <table>
+      <div class="ovy">
+      	<table>
         <thead>
           <tr>	
             <td class="inside-th">질문번호</td>
@@ -244,11 +255,11 @@
             <td class="inside-td">${t.title}</td>
             <td class="inside-td">${t.content}</td>
             <td class="inside-td">${t.date}</td>
-            <td><input type="button" id="ans" value="답변하기" onclick=""/></td><!--toggle(${t.qno})-->	
+            <td><input type="button" id="${t.qno}btn" class="btns" value="답변하기" onclick="toggle2('${t.qno}')"/></td><!--toggle(${t.qno})-->	
           </tr>
-          <tr id="qnaans">
+          <tr id='${t.qno}'>
             <td colspan="6">
-              <div id="writeAns">
+              <div class="writeAns">
                 <div class="dir">
                   <h4>답변 남기기</h4>
                 </div>
@@ -262,6 +273,7 @@
           </tr>
         </q:forEach>
       </table>
+      </div>
     </div>
   </div>
   <div>

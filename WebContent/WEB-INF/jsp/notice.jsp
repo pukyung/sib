@@ -6,12 +6,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="/project/css/ju/notice.css" rel="stylesheet" type="text/css"/>
 <link href="/project/css/jeong/nav.css" rel="stylesheet" type="text/css" />
-<link href="/project/css/jeong/hanho.css" rel="stylesheet" type="text/css" />	
+<link href="/project/css/jeong/hanho.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">	
 <script type="text/javascript">
 	function show(id){
 		let write = document.getElementById("write");
+		let link = document.getElementsByClassName("delete-link");
+		
 		if(id != 'admin'){
 			write.style.display='none';
+			for(let i=0;i<link.length;i++){
+				link[i].style.display = 'none';
+			}
 		}
 	}
 	
@@ -102,7 +108,14 @@
         		<q:forEach items="${notice}" var="t">
           			<tr class="normal">
             			<td class="normal-td">
-              				<div class="normal-title"><a class="title impotant" href="/project/nDetail.pj?pnum=${t.pnum}">${t.pnum}.${t.title}</a></div>
+              				<div class="normal-title">
+              					<a class="title impotant" href="/project/nDetail.pj?pnum=${t.pnum}">
+              						${t.pnum}.&nbsp;${t.title}
+              					</a>
+              					<a href="deleteN.pj?pnum=${t.pnum}" class="delete-link">
+              						[X]
+              					</a>
+              				</div>
               				<div class="normal-info">작성일${t.date} 작성자 관리자</div>
             			</td>			
           			</tr>

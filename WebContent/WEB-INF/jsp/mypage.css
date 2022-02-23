@@ -1,0 +1,342 @@
+/*
+ 2022-02-04 : 기본 틀 잡기
+2022-02-11 : 구매자 페이지
+*/
+/* 구매자 */
+html{
+  width: 100%;
+}
+
+@font-face {
+  font-family: 'surroundAir';
+  src: url("../font/Cafe24SsurroundAir.ttf");
+}
+
+*{
+  margin:0px;
+  font-family: 'surroundAir', Times,serif;
+}
+
+h3{
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #464646;
+}
+
+.body {
+	width : 60%;
+	margin-left : 20%;
+}
+
+.content-title{
+  border-bottom: 2px solid #05c46b;
+  width: 90%;
+  margin-left: 50px;
+}
+
+.mypage-cus-btn{
+  border: none;
+  padding: 10px;
+  background-color: none;
+  border-radius: 5px;
+}
+
+/* top */
+#head{
+  height: 80px;
+  border-bottom: 2px solid #05c46b;
+  padding-left: 50px;
+  padding-top: 200px;
+  line-height: 80px;
+  margin:auto;
+}
+
+nav{
+  float: right;
+}
+
+nav #main{
+  border: none;
+  height: 40px;
+  width:80px;
+  border-radius: 20px 20px;
+  background-color: #05c46b;
+  color: white;
+}
+
+#head h3{
+  margin-top: 10px;
+}
+
+#modify{
+  border: none;
+  height: 40px;
+  width:80px;
+  border-radius: 20px 20px;
+  background-color: #05c46b;
+  color: white;
+}
+
+/* 사용자 정보 */
+#userInfo{
+  height: 300px;
+  padding: 10px;
+  border:1.5px solid white;
+  border-radius: 4px;
+}
+
+#userInfo table{
+  width: 70%;
+  border-collapse: collapse;
+  margin-left: 50px;
+}
+
+#userInfo .label{
+  font-weight: bold;
+}
+
+#userInfo .info{
+  font-weight: lighter;
+}
+
+#userInfo td{
+  padding: 10px;
+  font-size: 20px;
+}
+
+/* 주문 */
+#od{
+  padding:10px;
+  height: 350px;
+  border:1.5px solid white;
+  border-radius: 4px;
+}
+
+#od table{
+  border-collapse: collapse;
+  margin-left: 50px;
+  margin-top: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#od table thead td, #oa table thead td, #rv table thead td{
+  padding: 10px;
+  border-bottom: 1px solid #808e9b;
+  text-align: center;
+  font-weight: bold;
+}
+
+#od table tbody td{
+  border-top: 1px solid #808e9b;
+  text-align: center;
+  padding: 10px;
+} 
+
+.th{
+  border-bottom: 2px solid #808e9b;
+}
+
+.inside-td{
+  border-right: 1px solid #808e9b;
+}
+
+.inside-th{
+  border-right: 1px solid #808e9b;
+}
+
+#confirm-order{
+  border: none;
+  padding: 10px;
+  border-radius: 20px 20px;
+  background-color: #05c46b;
+  color: white;
+}
+
+#confirm-order:hover{
+  box-shadow: 1px 1px 5px 0px #b2bec3;
+}
+
+/* 주문내역(orderall) */
+#oa{
+  height: 450px;
+  padding: 10px;
+  border:2px solid white;
+}
+
+.ooa {
+	height : 600px;
+	padding: 10px;
+	border:2px solid white;
+}
+
+
+
+#more{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border: none;
+  height: 40px;
+  width:80px;
+  border-radius: 20px 20px;
+  background-color: #05c46b;
+  color: white;
+}
+
+#oa table{
+  border-collapse: collapse;
+  width: 90%;
+  margin-right:auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+#orderall{
+  table-layout: fixed;
+  width : 90%;
+  margin : auto;
+  padding : 10px;
+  text-align : center;
+  border-collapse : collapse;
+}
+
+#oa .inMid{
+  text-align: center;
+}
+
+#oa td{
+  padding:10px;
+}
+
+.change {
+  border: none;
+  border-radius: 40px 40px;
+  background-color: #05c46b;
+  color: white;
+  width: 100px;
+  height: 40px;
+}
+
+.dir{
+  color:#05c46b;
+  font-size: 20px;
+}
+
+.review-box{
+  border: 1px solid #05c46b;
+  border-radius: 0px 0px 0px 30px;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.review-area{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+.content{
+  width: 100%;
+  height: 90px;
+  border: 0.5px solid #d2dae2;
+  resize: none;
+}
+
+ .star {
+ 	display:inline;
+    position: relative;
+    font-size: 2rem;
+    color: #ddd;
+    padding:0px;
+    margin:0px;
+  }
+  
+  .drag {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+ .rate{
+    width: 0;
+    position: absolute; 
+    left: 0;
+    color: #f7b731;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+.content:focus{
+  outline: 2px solid #05c46b;
+  border-radius: 5px;
+}
+
+.submit{
+  width: 70%;
+  margin: auto;
+  height: 40px;
+  background-color: #05c46b;
+  border: none;
+  color: white;
+  border-radius: 50px 50px;
+}
+
+.submit:hover{
+  box-shadow: 2px 3px 5px 0px #d2dae2;
+}
+
+.submit-area{
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+/* 리뷰 */
+#rv{
+  height:300px;
+  ma
+}
+
+#rv table{
+  border-collapse: collapse;
+  width: 90%;
+  margin-right:auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+#rv table tbody td{
+  padding: 10px;
+}
+
+.thtd {
+	padding : 10px;
+	border-bottom : 1px solid #808e9b;
+	text-align : center;
+	font-weight : bold;
+}
+
+
+.tbtd {
+	
+	padding : 10px;
+	border-bottom : 1px solid #808e9b;
+	text-align : center;
+}
+
+.ovy {
+	height:300px;
+	overflow:auto;
+	overflow-x : hidden;
+}
+
+/*==========================================================================================*/
+
+
