@@ -23,6 +23,12 @@ public interface SpringDAO {
 	public List<SpringVO> ordered( Integer forcount, String id ) throws Exception;
 	public void insertproduct( SpringVO vo, String id, List<MultipartFile> iimage ) throws Exception;
 	public List<SpringVO> productrank() throws Exception;
+	public void insertqna( SpringVO vo, String id ) throws Exception;
+	
+	// 22.02.23
+	public List<SpringVO> eventlist() throws Exception;
+	public SpringVO eventdetail( SpringVO vo ) throws Exception;
+	public void insertevent( SpringVO vo, String id ) throws Exception;
 	
 	public void test( List<SpringVO> vo ) throws Exception;
 
