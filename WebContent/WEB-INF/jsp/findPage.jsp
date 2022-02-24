@@ -69,38 +69,44 @@
     	} 	
     }
     
-    function loginStatus(kind){
-    	let login = document.getElementById("login");
-    	let logout = document.getElementById("logout");
-    	let mypage = document.getElementById("mypage");
-    	let cart = document.getElementById("cart");
-    	let register = document.getElementById("register");
-    	
-    	if(kind==''){
-    		login.style.display = "inline-block";
-    		logout.style.display = "none";
-    		mypage.style.display = "none";
-    		cart.style.display="none";
-    		register.style.display="inline-block";
-    	} else if( kind == "cus" ) {
-    		login.style.display="none";
-    		logout.style.display="inline-block";
-    		mypage.style.display="inline-block";
-    		cart.style.display="inline-block";
-    		register.style.display="none"
-    	} else if( kind == "sel" ) {
-    		login.style.display="none";
-    		logout.style.display="inline-block";
-    		mypage.style.display="inline-block";
-    		cart.style.display="none";
-    		register.style.display="none";
-    	} else{
-    		login.style.display="none";
-    		logout.style.display="inline-block";
-    		mypage.style.display="inline-block";
-    		register.style.display="none";
-    	}
-    }
+	function loginStatus(kind){
+		let login = document.getElementById("login");
+		let logout = document.getElementById("logout");
+		let mypage = document.getElementById("mypage");
+		let cart = document.getElementById("cart");
+		let register = document.getElementById("register");
+		
+		if(kind==''){
+			login.style.display = "inline-block";
+			logout.style.display = "none";
+			mypage.style.display = "none";
+			cart.style.display="none";
+			register.style.display="inline-block";
+		} else if( kind == "cus" ) {
+			login.style.display="none";
+			logout.style.display="inline-block";
+			mypage.style.display="inline-block";
+			cart.style.display="inline-block";
+			register.style.display="none"
+		} else if( kind == "sel" ) {
+			login.style.display="none";
+			logout.style.display="inline-block";
+			mypage.style.display="inline-block";
+			cart.style.display="none";
+			register.style.display="none";
+		} else if( kind == "adm" ) {
+			login.style.display="none";
+			logout.style.display="inline-block";
+			mypage.style.display="inline-block";
+			cart.style.display="none";
+			register.style.display="none"
+		} else{
+			login.style.display="none";
+			logout.style.display="inline-block";
+			mypage.style.display="inline-block";
+			register.style.display="none";
+		}
+	}
 </script>
 <title>심이베</title>
 </head>

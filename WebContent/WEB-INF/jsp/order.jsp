@@ -34,6 +34,12 @@
 					mypage.style.display="inline-block";
 					cart.style.display="none";
 					register.style.display="none";
+				} else if( kind == "adm" ) {
+					login.style.display="none";
+					logout.style.display="inline-block";
+					mypage.style.display="inline-block";
+					cart.style.display="none";
+					register.style.display="none"
 				} else{
 					login.style.display="none";
 					logout.style.display="inline-block";
@@ -108,6 +114,7 @@
 					<form method="post" action="/project/insertorder.pj">
 						<q:forEach items="${ order }" var="t">
 							<input type="hidden" name="ccnum" value="${ t.cnum }" />
+							<input type="hidden" name="evnum" value="${ t.evnum }" />
 							<input type="hidden" name="option" value="${ t.option }" />
 							<input type="hidden" name="ppid" value="${ t.pid }"/>
 							<input type="hidden" name="ppname" value="${ t.pname }" />
@@ -131,7 +138,7 @@
 								
 								<div class="p3 m3 mt5">
 									<input type="submit" class="delbtn wd40 bgcl" value="주문"/>
-									<input type="button" onClick="location.href='/project//cart.pj'" class="delbtn wd40 bgcr" value="취소"/>
+									<input type="button" onClick="location.href='/project/cart.pj'" class="delbtn wd40 bgcr" value="취소"/>
 								</div>
 							</div>
 						</div>

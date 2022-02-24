@@ -33,13 +33,19 @@
 			mypage.style.display="inline-block";
 			cart.style.display="none";
 			register.style.display="none";
+		} else if( kind == "adm" ) {
+			login.style.display="none";
+			logout.style.display="inline-block";
+			mypage.style.display="inline-block";
+			cart.style.display="none";
+			register.style.display="none"
 		} else{
 			login.style.display="none";
 			logout.style.display="inline-block";
 			mypage.style.display="inline-block";
 			register.style.display="none";
 		}
-	}
+	}	
 </script>
 <title>Ω…¿Ã∫£</title>
 </head>

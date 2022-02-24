@@ -8,7 +8,37 @@
 		<link href="/project/css/jeong/nav.css" rel="stylesheet" type="text/css" />
 		<link href="/project/css/jeong/hanho.css" rel="stylesheet" type="text/css" />
 		
-		<script>
+		<script>			
+		
+			window.onload = function() {
+				let qnainput = document.getElementById( "qnainput" );
+				let qnabtn = document.getElelementById( "qntbtn" );
+			}
+			
+			function check() {
+				
+				if( qnabtn.value == "작성하기" ){
+					qnainput.style.display = "block";
+					qnabtn.value = "취소";
+					
+				}else if( qnabtn.value == "취소" ){
+					qnainput.style.display = "none";
+					qnabtn.value = "작성하기";
+				}
+			}
+			
+			function showcontent(qno) {
+				
+				
+				let qnocontent = document.getElementById( qno+"content");
+				
+				if( qnocontent.style.display == "none" ){
+					qnocontent.style.display = "table-row";
+				}else {
+					qnocontent.style.display = "none";
+				}
+			}
+			
 			function loginStatus(kind){
 				let login = document.getElementById("login");
 				let logout = document.getElementById("logout");
@@ -34,6 +64,12 @@
 					mypage.style.display="inline-block";
 					cart.style.display="none";
 					register.style.display="none";
+				} else if( kind == "adm" ) {
+					login.style.display="none";
+					logout.style.display="inline-block";
+					mypage.style.display="inline-block";
+					cart.style.display="none";
+					register.style.display="none"
 				} else{
 					login.style.display="none";
 					logout.style.display="inline-block";
@@ -42,16 +78,16 @@
 				}
 			}
 			
-			window.onload = function() {
-				let qnaclick = document.getElementById("qnaclick");
-				let qnaans = document.getElementById("qnaans");
-				qnaans.style.display = "none";
+			function checkkind(kind){
 				
-				qnaclick.onclick = function(){
-					qnaans.style.display = "block";
+				if( kind == "cus" ) {
+					qnabtn.style.display = "inline-block";
+				}else {
+					qnabtn.style.display = "none";
 				}
-				
 			}
+			
+			
 		</script>
 		
 		<title>심이베</title>
@@ -159,7 +195,7 @@
 				<div class="content-title tl">
 					<h3 class="reviewh3">📃 작성한 리뷰</h3>
 				</div>
-				<div>
+				<div class="overy ht400px">
 					<table class="wd90 mauto">
 						<thead>
 							<tr class="th">
@@ -187,34 +223,64 @@
 			<!-- #QnA -->
 			<div id="qnalist" class="mt10 pb10">
 				<div class="content-title tl">
-					<h3 class="reviewh3">👐🏻QnA</h3>
+					<h3 class="reviewh3">
+						👐🏻QnA
+						<input id="qnabtn" onclick="check()" type="button" value="작성하기" class="qnabtn" />
+						<script>checkkind("${kind}")</script>
+					</h3>
 				</div>
 				
-				<table class="wd90 mauto">
-					<thead>
-						<tr>
-							<td class="inside-th wd15">구매자</td>
-							<td class="inside-th">제목</td>
-							<td class="inside-th wd20">등록일</td>
-						</tr>
-					</thead>
-					
-					<q:forEach items="${questions}" var="t">
-						<tr id="qnaclick">
-							<td class="inside-td">${t.cusid}</td>
-							<td class="inside-td">${t.title}</td>
-							<td class="">${t.date}</td>
-						</tr>
-						
-						<tr id="qnaans">
-							<td colspan="6">
-							<div id="writeAns">
-								<textarea class="answer"  name="answer" rows="5" cols="33">${ t.answer }</textarea>
+				<div id="qnainput" style="display:none;" class="pb1">
+					<div>
+						<h1>QnA 작성하기</h1>
+					</div>
+					<div id="" class="qnadv" >
+						<form action="inserqna.pj" method="post" class="">
+							<div>
+								<input type="text" name="title" class="wd60 ht25px qnainput" placeholder="제목" />
 							</div>
-							</td>
-						</tr>
-					</q:forEach>
-				</table>
+							<br/>
+							<div>
+								<textarea name="content" class="wd60 qnainput ht100px" placeholder="내용을 입력하세요"></textarea>
+							</div>
+							<div>
+								<input type="hidden" name="pid" value="${ info.pid }" />
+								<input type="submit" id="" class="qnabtn" value="작성" />
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="overy ht400px">
+					<table class="wd90 mauto coll">
+						<thead>
+							<tr class="th">
+								<td class="thtd inside-th wd15 th">구매자</td>
+								<td class="thtd inside-th th">제목</td>
+								<td class="thtd wd20 th">등록일</td>
+							</tr>
+						</thead>
+						
+						<q:forEach items="${ qna }" var="t">
+							<tr id="" onclick="showcontent(${ t.qno })">
+								<td class="tdtd inside-td">${ t.cusid }</td>
+								<td class="tdtd inside-td">${ t.title }</td>
+								<td class="tdtd">${t.date}</td>
+							</tr>
+							
+							<tr id="${ t.qno }content" class="disnone">
+								<td colspan="6">
+								<div id="writeAns" class="ht100px qnacotnetdv">
+									<div class="qnacontent">
+										<div class="qnacontenttext">
+											${ t.content }
+										</div>
+									</div>
+								</div>
+								</td>
+							</tr>
+						</q:forEach>
+					</table>
+				</div>
 			</div>
 		</section>
 		

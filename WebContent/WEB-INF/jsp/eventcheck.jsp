@@ -1,13 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<!DOCTYPE>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="q" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="/project/css/ju/notification.css" rel="stylesheet" type="text/css"/>
-<link href="/project/css/jeong/nav.css" rel="stylesheet" type="text/css" />
-<link href="/project/css/jeong/hanho.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="/project/css/jeong/nav.css" rel="stylesheet" type="text/css" />
+		<link href="/project/css/jeong/hanho.css" rel="stylesheet" type="text/css" />
+		
+		<script>			
+		
 			function loginStatus(kind){
 				let login = document.getElementById("login");
 				let logout = document.getElementById("logout");
@@ -46,10 +48,15 @@
 					register.style.display="none";
 				}
 			}
-</script>
-<title>Insert title here</title>
-</head>
-<body class="wd100 hanhobody">
+			
+		</script>
+		
+		<title>심이베</title>
+	</head>
+
+	<body class=" hanhobody">
+	
+		<!-- Navi -->
 		<header>
 			<nav class="nav nava">
 				<ul class="navmain hanhoul">
@@ -68,39 +75,48 @@
 				</ul>
 				<ul class="navmenu tc hanhoul" >
 					<div>
-					<li class="navli hanholi"><a href="/project/main.pj" class="nava hanhoa">메인</a></li>
-					<li class="navli hanholi"><a href="/project/product.pj" class="nava hanhoa">상품</a></li>
-					<li class="navli hanholi"><a href="/project/notice.pj" class="nava hanhoa">공지사항</a></li>
+						<li class="navli hanholi"><a href="/project/main.pj" class="nava hanhoa">메인</a></li>
+						<li class="navli hanholi"><a href="/project/product.pj" class="nava hanhoa">상품</a></li>
+						<li class="navli hanholi"><a href="/project/notice.pj" class="nava hanhoa">공지사항</a></li>
 					</div>
 				</ul>
 			</nav>
 		</header>
 
-<!-- 결과창 -->
-<div class="ht100">
-  <div id="notify">
-    <div id="content">
-      <p style="font-size: smaller;"> 👏🏻등록이 완료되었습니다!👏🏻 </p>
-		  <p> 승인이 완료되면 알려드릴게요</p>
-		  <a href="main.pj"><button>메인으로</button></a>
-    </div>
-	</div>
-</div>
-
-<!-- footer -->
-<footer class="footer">
-	<div class="footerdiv">
-		<div class="wd50 fr">
-			<span>부산광역시 남구 용소로 45</span><br/>
-			<span>gksdn1216@naver.com</span><br/>
-			</div>
-			
-			<div class="wd50 fr">
-			<span>주식회사되고싶은 심이베</span><br/>
-			<span>대표자 주상희, 정한호</span><br/>
-			<span>Copyright&copy; 주상희, 정한호</span><br/>
-			</div>
+		<div>
+			<div>
+				<table border='1'>
+					<thead>
+						<tr>
+							<td>상품명</td>
+							<td>이벤트 가격</td>
+							<td>작성한 가격</td>
+							<td>비고</td>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<q:forEach items="${ eventcheck }" var="t" >
+							<tr>
+								<td>${ t.pname }</td>
+								<td>${ t.eprice }</td>
+								<td>${ t.eiprice }</td>
+								<td>
+									<form method="post" action="ordercheck.pj" >
+										<input type="hidden" name="evnum" value="${ t.evnum }" />
+										<input type="hidden" name="pid" value="${ t.pid }" />
+										<input type="hidden" name="pname" value="${ t.pname }" />
+										<input type="hidden" name="eprice" value="${ t.eprice }" />
+										<input type="hidden" name="forcount" value=3 />
+										<input type="submit" value="구매"/>
+									</form>
+								</td>
+							</tr>
+						</q:forEach>
+					</tbody>
+				</table>
+			</div>	
 		</div>
-</footer>	
-</body>
+		
+	</body>
 </html>
