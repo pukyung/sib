@@ -9,8 +9,12 @@ a {
 	text-decoration : none;
 }
 
+.rn {
+	resize : none;
+}
+
 .overy {
-	overflow-y = scroll;
+	overflow-y : scroll;
 }
 
 .bgc {
@@ -140,12 +144,24 @@ a {
 	height : 100%;
 }
 
+.ht1200px {
+	height : 1200px;
+}
+
 .ht1000px {
 	height : 1000px;
 }
 
-.ht1200px {
-	height : 1200px;
+.ht400px {
+	height : 400px;
+}
+
+.ht100px {
+	height : 100px;
+}
+
+.ht25px {
+	height : 25px;
 }
 
 .ht85 {
@@ -154,6 +170,10 @@ a {
 
 .ht70 {
 	height : 70%;
+}
+
+.ht40px {
+	height : 40px;
 }
 
 .mr5 {
@@ -179,6 +199,10 @@ a {
 
 .pb10 {
 	padding-bottom : 10%;
+}
+
+.pb1 {
+	padding-bottom : 1%;
 }
 
 .pt12 {
@@ -224,11 +248,6 @@ a {
 	height : 10%;
 	background-color : #e5e5ca;
 }
-
-.ht40px {
-	height : 40px;
-}
-
 .sipt : focus {
 	background-color : white;
 }
@@ -525,4 +544,60 @@ a {
 	border-radius : 13px;
 	background-color : #707672;
 	height : 25px;
+}
+
+.qnabtn {
+	border : none;
+	height : 40px;
+	width : 80px;
+	border-radius : 20px 20px;
+	background-color: #05c46b;
+	color : white;
+}
+
+.qnadv {
+	width : 90%;
+	padding : 1% 0;
+	margin : auto;
+	border : 1px solid #05c46b;
+	border-radius : 0 0 0 20px;
+}
+
+.qnainput {
+	border : 1px solid #d2dae2;
+	border-radius : 5px;
+	resize : none;
+}
+
+.thtd {
+	padding : 10px;
+	border-bottom : 1px solid #808e9b;
+	text-align : center;
+	font-weight : bold;
+}
+
+.tdtd {
+	padding : 10px;
+	border-bottom : 1px solid #808e9b;
+	border-top : 1px solid #808e9b;
+	text-align : center;
+}
+
+.disnone {
+	display : none;
+}
+
+.qnacotnetdv {
+	margin-top : -2px;
+}
+
+.qnacontent {
+	height : 80%;
+	border : 1px solid black;
+	border-radius : 0 0 20px 20px;
+}
+
+.qnacontenttext {
+	font-size : 0.9em;
+	padding : 1%;
 }
