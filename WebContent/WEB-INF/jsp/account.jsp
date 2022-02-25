@@ -150,13 +150,13 @@
           	<tr>
             	<td class="what">비밀번호</td>
             	<td>
-            		<input type="password" name="cuspw" class="value shortInput" placeholder="비밀번호"/>
+            		<input type="password" id="cuspw" name="cuspw" class="value shortInput" placeholder="비밀번호"/>
             	</td>
          	 </tr>
           	<tr>
             	<td class="what">비밀번호 확인</td>
             	<td>
-            		<input type="password" class="value shortInput" placeholder="비밀번호 확인"/>
+            		<input type="password" id="cuscheck" class="value shortInput" placeholder="비밀번호 확인"/>
             		<input type="button" id="cus_check" class="check" value="확인하기" onclick="checkPw(cuspw, cuscheck, 'cus')"/>
             	</td>
           	</tr>
@@ -195,12 +195,12 @@
           </tr>
           <tr>
             <td class="what">비밀번호</td>
-            <td><input type="password" class="value shortInput" placeholder="비밀번호" name="selpw"/></td>
+            <td><input type="password" id="selpw" class="value shortInput" placeholder="비밀번호" name="selpw"/></td>
           </tr>
           <tr>
             <td class="what">비밀번호 확인</td>
             <td>
-            	<input type="password" class="value shortInput" placeholder="비밀번호 확인"/>
+            	<input type="password" id="selcheck" class="value shortInput" placeholder="비밀번호 확인"/>
             	<input type="button" class="check" id="sel_check" value="확인하기" onclick="checkPw(selpw, selcheck, 'sel')"/>
             </td>
           </tr>
