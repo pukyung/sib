@@ -388,6 +388,24 @@ public class controll {
 			mnv.addObject("userid", (String)session.getAttribute("userid"));
 			return mnv;
 		}
+	
+		@RequestMapping("/groupList.pj")
+		public ModelAndView grouplist(final @ModelAttribute SpringVO vo, HttpSession session) throws Exception{
+			ModelAndView mnv = new ModelAndView();
+			
+			if(session.getAttribute("city")!=null && session.getAttribute("state")!=null) {
+				vo.setCity(Util.change((String)session.getAttribute("city")));
+				vo.setState(Util.change((String)session.getAttribute("state")));
+			}
+			else {
+				vo.setCity(Util.change(vo.getCity()));
+				vo.setState(Util.change(vo.getState()));
+			}
+			
+			mnv.addObject("glist", springDao.findGroup(vo));
+			mnv.setViewName("grouplist");
+			return mnv;
+		}
 		
 		// 수정 - 메소드를 하나로 합침(cus + sel) 2022-02-08
 		@RequestMapping("/modifyInfo.pj")
