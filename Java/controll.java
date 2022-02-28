@@ -37,7 +37,7 @@ public class controll {
 	public void setSpringDao(SpringDAO_Im springDao) { this.springDao = springDao; }
 	
 	
-	//¸ŞÀÎ ÆäÀÌÁö ÀÌµ¿
+	//ë©”ì¸ í˜ì´ì§€ ì´ë™
 	@RequestMapping("/main.pj")
 	public ModelAndView main( HttpSession session) throws Exception{
 		
@@ -48,40 +48,40 @@ public class controll {
 		return mnv;
 	}
 	
-	// »óÇ° ÀüÃ¼ ÆäÀÌÁö
+	// ìƒí’ˆ ì „ì²´ í˜ì´ì§€
 	@RequestMapping( "/product.pj" )
 	public ModelAndView product( @ModelAttribute SpringVO vo ) throws Exception {
 		
 		ModelAndView mnv = new ModelAndView();
 		
 		mnv.setViewName( "product" );
-		// »óÇ° °¡Á®¿À±â
+		// ìƒí’ˆ ê°€ì ¸ì˜¤ê¸°
 		mnv.addObject( "list", springDao.productAll( vo ) );
 		
 		return mnv;
 	}
 	
-	// »óÇ° »ó¼¼ ÆäÀÌÁö
+	// ìƒí’ˆ ìƒì„¸ í˜ì´ì§€
 	@RequestMapping( "/detail.pj" )
 	public ModelAndView detail( @ModelAttribute SpringVO vo ) throws Exception {
 		
 		ModelAndView mnv = new ModelAndView();
 		
 		mnv.setViewName( "detail" );
-		// »óÇ° Á¤º¸ °¡Á®¿À±â
+		// ìƒí’ˆ ì •ë³´ ê°€ì ¸ì˜¤ê¸°
 		mnv.addObject( "info", springDao.detail( vo ) );
-		// »óÇ° ÀÌ¹ÌÁö °¡Á®¿À±â
+		// ìƒí’ˆ ì´ë¯¸ì§€ ê°€ì ¸ì˜¤ê¸°
 		mnv.addObject( "img", springDao.image( vo ) );
-		// ¸®ºä °¡Á®¿À±â
+		// ë¦¬ë·° ê°€ì ¸ì˜¤ê¸°
 		mnv.addObject( "review", springDao.review( vo ) );
-		// QnA °¡Á®¿À±â
+		// QnA ê°€ì ¸ì˜¤ê¸°
 		mnv.addObject( "qna", springDao.qna( vo ) );
 
 		
 		return mnv;
 	}
 	
-	// »óÇ° Ãß°¡ ÆäÀÌÁö
+	// ìƒí’ˆ ì¶”ê°€ í˜ì´ì§€
 	@RequestMapping( "/productin.pj" )
 	public ModelAndView productin( @ModelAttribute SpringVO vo, HttpSession session ) throws Exception {
 		
@@ -91,7 +91,7 @@ public class controll {
 		return mnv;
 	}
 	
-	// »óÇ° Ãß°¡
+	// ìƒí’ˆ ì¶”ê°€
 	@RequestMapping( "/insertproduct.pj" )
 	public String insertproduct( @ModelAttribute SpringVO vo, HttpSession session, @RequestParam(required=false) List<MultipartFile> iimage ) throws Exception {
 
@@ -101,7 +101,7 @@ public class controll {
 		return "redirect:product.pj";
 	}
 	
-	// Àå¹Ù±¸´Ï ÆäÀÌÁö
+	// ì¥ë°”êµ¬ë‹ˆ í˜ì´ì§€
 	@RequestMapping( "/cart.pj" )
 	public ModelAndView cart( @ModelAttribute SpringVO vo, HttpSession session ) throws Exception {
 		
@@ -111,7 +111,7 @@ public class controll {
 		return mnv;
 	}
 	
-	// Àå¹Ù±¸´Ï Ãß°¡ ±â´É
+	// ì¥ë°”êµ¬ë‹ˆ ì¶”ê°€ ê¸°ëŠ¥
 	@RequestMapping( "/insertcart.pj" )
 	public String insertcart( @ModelAttribute SpringVO vo, HttpSession session ) throws Exception {
 		
@@ -126,7 +126,7 @@ public class controll {
 		return "redirect:/cart.pj";
 	}
 	
-	// ÁÖ¹® ÆäÀÌÁö
+	// ì£¼ë¬¸ í˜ì´ì§€
 	@RequestMapping( "/ordercheck.pj" )
 	public ModelAndView ordercheck( @ModelAttribute SpringVO vo, HttpSession session, @RequestParam(required=false) List<String> cartcount ) throws Exception {
 
@@ -136,7 +136,7 @@ public class controll {
 		return mnv;
 	}
 	
-	// order_T ¿¡ °ª ³Ö±â
+	// order_T ì— ê°’ ë„£ê¸°
 	@RequestMapping( "/insertorder.pj" )
 	public String insertorder( @ModelAttribute SpringVO vo, HttpSession session, @RequestParam(required=false) List<String> ppid,
 			@RequestParam(required=false) List<String> ppname, @RequestParam(required=false) List<String> ppcount,
@@ -168,7 +168,7 @@ public class controll {
 		return "redirect:ordered.pj?forcount="+ppid.size();
 	}
 	
-	// °¡Àå ÃÖ±Ù ÁÖ¹®³»¿ª ÆäÀÌÁö
+	// ê°€ì¥ ìµœê·¼ ì£¼ë¬¸ë‚´ì—­ í˜ì´ì§€
 	@RequestMapping( "/ordered.pj" )
 	public ModelAndView ordered( @ModelAttribute SpringVO vo, HttpSession session ) throws Exception {		
 		
@@ -179,7 +179,7 @@ public class controll {
 		return mnv;
 	}
 	
-	// QnA Ãß°¡
+	// QnA ì¶”ê°€
 	@RequestMapping( "/inserqna.pj" )
 	public String insertqna( @ModelAttribute SpringVO vo, HttpSession session ) throws Exception {
 		
@@ -188,7 +188,7 @@ public class controll {
 		return "redirect:/detail.pj?pid=" + vo.getPid();
 	}
 	
-	// Event ¸®½ºÆ® ³»¿ª ÆäÀÌÁö
+	// Event ë¦¬ìŠ¤íŠ¸ ë‚´ì—­ í˜ì´ì§€
 	@RequestMapping( "/event.pj" )
 	public ModelAndView event( @ModelAttribute SpringVO vo ) throws Exception {
 		
@@ -201,16 +201,16 @@ public class controll {
 		return mnv;
 	}
 	
-	// Event »ó¼¼ ÆäÀÌÁö
+	// Event ìƒì„¸ í˜ì´ì§€
 	@RequestMapping( "/eventdetail.pj" )
 	public ModelAndView evnetdetail( @ModelAttribute SpringVO vo ) throws Exception {
 		
 		ModelAndView mnv = new ModelAndView();
 		
-		// Event »ó¼¼ ³»¿ë
+		// Event ìƒì„¸ ë‚´ìš©
 		mnv.addObject( "eventdetail", springDao.eventdetail( vo ) );
 		
-		// ¼ÒºñÀÚ Event Âü¿© ³»¿ª
+		// ì†Œë¹„ì Event ì°¸ì—¬ ë‚´ì—­
 		mnv.addObject( "eventpart", springDao.eventpart( vo ) );
 		
 		mnv.setViewName( "eventdetail" );
@@ -245,7 +245,7 @@ public class controll {
 	
 	
 
-	// »ç¿ëÀÚ µî·ÏÇÏ´Â ¸Ş¼Òµå  2022-02-03
+	// ì‚¬ìš©ì ë“±ë¡í•˜ëŠ” ë©”ì†Œë“œ  2022-02-03
 		@RequestMapping("/register.pj")
 		public ModelAndView register(HttpSession session) throws Exception{
 			ModelAndView mnv = new ModelAndView();
@@ -258,7 +258,7 @@ public class controll {
 			return mnv;
 		}
 		
-		//ÆÇ¸ÅÀÚ µî·Ï ¿äÃ» ÈÄ ÀÌµ¿ À¯µµ
+		//íŒë§¤ì ë“±ë¡ ìš”ì²­ í›„ ì´ë™ ìœ ë„
 		@RequestMapping("/notification.pj")
 		public ModelAndView notification(HttpSession session) throws Exception{
 			ModelAndView mnv = new ModelAndView();
@@ -271,12 +271,12 @@ public class controll {
 			return mnv;
 		}
 		
-		//·Î±×ÀÎ È­¸é ÀÌµ¿  2022-02-03  ¼ÒºñÀÚ ·Î±×ÀÎ È®ÀÎ ½Ã, jshe1207 & aa134·Î È®ÀÎ
-		// ¼öÁ¤ : ·Î±×ÀÎ µÈ »óÅÂÀÏ ¶§, ·Î±×ÀÎ È­¸é Á¢±Ù ºÒ°¡ 2022-02-04
+		//ë¡œê·¸ì¸ í™”ë©´ ì´ë™  2022-02-03  ì†Œë¹„ì ë¡œê·¸ì¸ í™•ì¸ ì‹œ, jshe1207 & aa134ë¡œ í™•ì¸
+		// ìˆ˜ì • : ë¡œê·¸ì¸ ëœ ìƒíƒœì¼ ë•Œ, ë¡œê·¸ì¸ í™”ë©´ ì ‘ê·¼ ë¶ˆê°€ 2022-02-04
 		@RequestMapping("/login.pj")
 		public ModelAndView login(HttpSession session) throws Exception{
 			ModelAndView mnv = new ModelAndView();
-			// ·Î±×ÀÎ Á¤º¸°¡ Á¸ÀçÇÒ ¶§, mainÆäÀÌÁö·Î ÀÌµ¿
+			// ë¡œê·¸ì¸ ì •ë³´ê°€ ì¡´ì¬í•  ë•Œ, mainí˜ì´ì§€ë¡œ ì´ë™
 			if(session.getAttribute("userid")!=null) {
 				mnv.setViewName("main");
 			}
@@ -287,7 +287,7 @@ public class controll {
 			return mnv;
 		}
 		
-		// id/ºñ¹Ğ¹øÈ£ Ã£±â Àü »ç¿ëÀÚ/±¸¸ÅÀÚ ¼±ÅÃ ÆäÀÌÁö 2022-02-08
+		// id/ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸° ì „ ì‚¬ìš©ì/êµ¬ë§¤ì ì„ íƒ í˜ì´ì§€ 2022-02-08
 		@RequestMapping("/findMyIdPw.pj")
 		public ModelAndView selectKind(HttpSession session) throws Exception{
 			ModelAndView mnv = new ModelAndView();
@@ -300,8 +300,8 @@ public class controll {
 			return mnv;
 		}
 		
-		//id/ºñ¹Ğ¹øÈ£ Ã£±â ÆäÀÌÁö 2022-02-08 
-		// ¼öÁ¤¿Ï·á 2022-02-09
+		//id/ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸° í˜ì´ì§€ 2022-02-08 
+		// ìˆ˜ì •ì™„ë£Œ 2022-02-09
 			@RequestMapping("/find.pj")
 			public ModelAndView findMyKey(@RequestParam("mode") String mode, HttpSession session) throws Exception{
 				ModelAndView mnv = new ModelAndView();
@@ -315,7 +315,7 @@ public class controll {
 				return mnv;
 			}
 		
-		// ¾ÆÀÌµğ ºñ¹Ğ¹øÈ£ Ã£±â °á°ú 2022-02-09
+		// ì•„ì´ë”” ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸° ê²°ê³¼ 2022-02-09
 		@RequestMapping("findResult.pj")
 		public ModelAndView findResult(HttpSession session) throws Exception{
 			ModelAndView mnv = new ModelAndView();
@@ -332,12 +332,12 @@ public class controll {
 			return mnv;
 		}
 		
-		//¸¶ÀÌÆäÀÌÁö·Î ÀÌµ¿ 2022-02-04
-		// ¼öÁ¤ ¿Ï·á- mypage.pj¿¡ Á¢¼ÓÇÏ¸é »ç¿ëÀÚÀÇ ¸ğµå¿¡ µû¶ó ¸¶ÀÌÆäÀÌÁö¿¡ ¿Å°Ü°¡µµ·Ï 2022-02-08
+		//ë§ˆì´í˜ì´ì§€ë¡œ ì´ë™ 2022-02-04
+		// ìˆ˜ì • ì™„ë£Œ- mypage.pjì— ì ‘ì†í•˜ë©´ ì‚¬ìš©ìì˜ ëª¨ë“œì— ë”°ë¼ ë§ˆì´í˜ì´ì§€ì— ì˜®ê²¨ê°€ë„ë¡ 2022-02-08
 		@RequestMapping("/mypage.pj")
 		public ModelAndView mypage(HttpSession session) throws Exception{
 			ModelAndView mnv = new ModelAndView();
-			// ·Î±×ÀÎ ½Ã¿¡¸¸ ¸¶ÀÌÆäÀÌÁö Á¢±Ù °¡´É
+			// ë¡œê·¸ì¸ ì‹œì—ë§Œ ë§ˆì´í˜ì´ì§€ ì ‘ê·¼ ê°€ëŠ¥
 			if(session.getAttribute("userid")!=null) {
 				String userid = (String)session.getAttribute("userid");
 				String kind = (String)session.getAttribute("kind");
@@ -379,13 +379,22 @@ public class controll {
 			
 			return mnv;
 		}
+	
+		/*0223*/
+		@RequestMapping("/group.pj")
+		public ModelAndView group(HttpSession session) throws Exception{
+			ModelAndView mnv = new ModelAndView();
+			mnv.setViewName("group");
+			mnv.addObject("userid", (String)session.getAttribute("userid"));
+			return mnv;
+		}
 		
-		// ¼öÁ¤ - ¸Ş¼Òµå¸¦ ÇÏ³ª·Î ÇÕÄ§(cus + sel) 2022-02-08
+		// ìˆ˜ì • - ë©”ì†Œë“œë¥¼ í•˜ë‚˜ë¡œ í•©ì¹¨(cus + sel) 2022-02-08
 		@RequestMapping("/modifyInfo.pj")
 		public ModelAndView moInfo(HttpSession session) throws Exception{
 			ModelAndView mnv = new ModelAndView();
 			String userid = (String)session.getAttribute("userid");
-			// ·Î±×ÀÎ ½Ã¿¡¸¸ ¸¶ÀÌÆäÀÌÁö Á¢±Ù °¡´É
+			// ë¡œê·¸ì¸ ì‹œì—ë§Œ ë§ˆì´í˜ì´ì§€ ì ‘ê·¼ ê°€ëŠ¥
 			if(userid!=null) {
 				String kind = (String)session.getAttribute("kind");
 				SpringVO vo = null;
@@ -405,7 +414,7 @@ public class controll {
 			return mnv;
 		}
 		
-		//ÁÖ¹®³»¿ª ÆäÀÌÁö ÀÌµ¿ 2022-02-10
+		//ì£¼ë¬¸ë‚´ì—­ í˜ì´ì§€ ì´ë™ 2022-02-10
 		@RequestMapping("/moreorder.pj")
 		public ModelAndView showMore(HttpSession session) throws Exception{
 			ModelAndView mnv = new ModelAndView();
@@ -420,7 +429,7 @@ public class controll {
 			return mnv;
 		}
 		
-		//°ü¸®ÀÚ ÆäÀÌÁö ÀÌµ¿ 2022-02-07
+		//ê´€ë¦¬ì í˜ì´ì§€ ì´ë™ 2022-02-07
 		@RequestMapping("/adminpage.pj")
 		public ModelAndView admin(HttpSession session) throws Exception{
 			ModelAndView mnv = new ModelAndView();
@@ -434,7 +443,7 @@ public class controll {
 			return mnv;
 		}
 		
-		//°øÁö»çÇ× 2022-02-04
+		//ê³µì§€ì‚¬í•­ 2022-02-04
 		@RequestMapping("/notice.pj")
 		public ModelAndView notice(HttpSession session) throws Exception{
 			ModelAndView mnv = new ModelAndView();
@@ -451,7 +460,7 @@ public class controll {
 			return mnv;
 		}
 		
-		//°øÁö»çÇ× ¼¼ºÎ »çÇ× 2022-02-04
+		//ê³µì§€ì‚¬í•­ ì„¸ë¶€ ì‚¬í•­ 2022-02-04
 		@RequestMapping("/nDetail.pj")
 		public ModelAndView nDetail(@RequestParam("pnum")int pnum) throws Exception{
 			ModelAndView mnv = new ModelAndView();
@@ -460,7 +469,7 @@ public class controll {
 			return mnv;
 		}
 		
-		// °øÁö¸¦ ÀÛ¼ºÇÒ ¼ö ÀÖ´Â ºä 2022-02-04
+		// ê³µì§€ë¥¼ ì‘ì„±í•  ìˆ˜ ìˆëŠ” ë·° 2022-02-04
 		@RequestMapping("/writeNotice.pj")
 		public ModelAndView write(HttpSession session) throws Exception{
 			ModelAndView mnv = new ModelAndView();
@@ -474,7 +483,7 @@ public class controll {
 			return mnv;
 		}
 	
-		/* °øµ¿±¸¸Å »ı¼º 2022-02-23*/
+		/* ê³µë™êµ¬ë§¤ ìƒì„± 2022-02-23*/
 		@RequestMapping("/group.pj")
 		public ModelAndView group(HttpSession session) throws Exception{
 			ModelAndView mnv = new ModelAndView();
@@ -492,9 +501,9 @@ public class controll {
 	
 		
 		
-		//======================================= ±â´É ¼öÇà redirect =======================================
-		//»ç¿ëÀÚ µî·Ï
-		// ¼ÒºñÀÚ  2022-02-03
+		//======================================= ê¸°ëŠ¥ ìˆ˜í–‰ redirect =======================================
+		//ì‚¬ìš©ì ë“±ë¡
+		// ì†Œë¹„ì  2022-02-03
 		@RequestMapping("/cusaccount.pj")
 		public String cusaccount(final @ModelAttribute SpringVO vo, HttpSession session) throws Exception{
 			if(session.getAttribute("userid")==null) {
@@ -505,7 +514,7 @@ public class controll {
 			return "redirect:main.pj";
 		}
 		
-		// ÁÖ¹®È®Á¤ ¼öÇà 2022-02-08
+		// ì£¼ë¬¸í™•ì • ìˆ˜í–‰ 2022-02-08
 		@RequestMapping("/confirmOrder.pj")
 		public String confirmOrder(@RequestParam("odnum") Integer odnum, HttpSession session) throws Exception{
 			if(session.getAttribute("userid")!=null && odnum!=null) {
@@ -516,8 +525,8 @@ public class controll {
 			return "redirect:main.pj";
 		}
 		
-		//ÆÇ¸ÅÀÚ  2022-02-03
-		// ÆÇ¸ÅÀÚ°¡ µî·ÏÇÏ¸é, ¾È³» ÆäÀÌÁö°¡ ¶ßµµ·Ï º¯°æ 2022-02-07
+		//íŒë§¤ì  2022-02-03
+		// íŒë§¤ìê°€ ë“±ë¡í•˜ë©´, ì•ˆë‚´ í˜ì´ì§€ê°€ ëœ¨ë„ë¡ ë³€ê²½ 2022-02-07
 		@RequestMapping("/selaccount.pj")
 		public String selaccount(final @ModelAttribute SpringVO vo, HttpSession session) throws Exception{
 			if(session.getAttribute("userid")==null) {
@@ -526,8 +535,20 @@ public class controll {
 			}
 			return "redirect:main.pj";
 		}
+	
+		/* ê³µë™êµ¬ë§¤ ìƒì„± 0223*/
+		@RequestMapping("/makeRoom.pj")
+		public String  makeRoom(final @ModelAttribute SpringVO vo, HttpSession session) throws Exception{
+			if(session.getAttribute("userid")!=null) {
+				springDao.makeRoom(vo);
+				session.setAttribute("city", Util.change(vo.getCity()));
+				session.setAttribute("state", Util.change(vo.getState()));
+				return "redirect:groupList.pj";
+			}
+			return "redirect:main.pj";
+		}
 		
-		//ÆÇ¸ÅÀÚ ½ÂÀÎ 2022-02-07
+		//íŒë§¤ì ìŠ¹ì¸ 2022-02-07
 		@RequestMapping("/res.pj")
 		public String res(@RequestParam("res") char res, @RequestParam("selid") String selid, HttpSession session) throws Exception{
 			if(((String)session.getAttribute("userid")).equals("admin")) {
@@ -540,7 +561,7 @@ public class controll {
 			return "redirect:mypage.pj";
 		}
 		
-		// Ç°Àı ¼±ÅÃ 2022-02-09(-> count¸¦ 0À¸·Î update)
+		// í’ˆì ˆ ì„ íƒ 2022-02-09(-> countë¥¼ 0ìœ¼ë¡œ update)
 		@RequestMapping("/soldout.pj")
 		public String soldout(@RequestParam("pid") Integer pid, HttpSession session) throws Exception{
 			
@@ -561,9 +582,9 @@ public class controll {
 			return "redirect:mypage.pj";
 		}
 		
-		//·Î±×ÀÎ ±â´É ¼öÇà
-		// »ç¿ëÀÚ ·Î±×ÀÎ  2022-02-03
-		// ·Î±×ÀÎ ÇÑ¹ø¿¡ ÇÒ ¼ö ÀÖµµ·Ï ¼öÁ¤ cusLogin -> Login 2022-02-07
+		//ë¡œê·¸ì¸ ê¸°ëŠ¥ ìˆ˜í–‰
+		// ì‚¬ìš©ì ë¡œê·¸ì¸  2022-02-03
+		// ë¡œê·¸ì¸ í•œë²ˆì— í•  ìˆ˜ ìˆë„ë¡ ìˆ˜ì • cusLogin -> Login 2022-02-07
 		@RequestMapping("/plogin.pj")
 		public String Login(@ModelAttribute SpringVO vo, @RequestParam("kind") String kind, HttpSession session) throws Exception{
 			session.setAttribute("kind", kind);
@@ -594,7 +615,7 @@ public class controll {
 			}
 		}
 		
-		//¾ÆÀÌµğ ºñ¹Ğ¹øÈ£ Ã£±â - ¼öÁ¤¿Ï·á -
+		//ì•„ì´ë”” ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸° - ìˆ˜ì •ì™„ë£Œ -
 		@RequestMapping("/findIdPw.pj") 
 		public String requestFind(@ModelAttribute SpringVO vo, @RequestParam("kind") String kind, HttpSession session) throws Exception{
 			if(session.getAttribute("userid")!=null) {
@@ -621,7 +642,7 @@ public class controll {
 			return "redirect:findResult.pj";
 		}
 
-		//ÀüÃ¼ ·Î±× ¾Æ¿ô 2022-02-04
+		//ì „ì²´ ë¡œê·¸ ì•„ì›ƒ 2022-02-04
 		@RequestMapping("/logout.pj")
 		public String logout(HttpSession session) throws Exception{
 			if(session.getAttribute("userid")==null) {
@@ -632,7 +653,7 @@ public class controll {
 			return "redirect:main.pj";
 		}
 		
-		//°øÁö µî·Ï 2022-02-04
+		//ê³µì§€ ë“±ë¡ 2022-02-04
 		@RequestMapping("/postN.pj")
 		public String postN(@ModelAttribute SpringVO vo, HttpSession session) throws Exception{
 			if(!((String)session.getAttribute("userid")).equals("admin")) {
@@ -646,7 +667,7 @@ public class controll {
 			return "redirect:notice.pj";
 		}
 		
-		//¸¶ÀÌÆäÀÌÁö ¼öÁ¤(±¸¸ÅÀÚ) 2022-02-04
+		//ë§ˆì´í˜ì´ì§€ ìˆ˜ì •(êµ¬ë§¤ì) 2022-02-04
 		@RequestMapping("/modifyCus.pj")
 		public String modifyCus(@ModelAttribute SpringVO vo, HttpSession session) throws Exception{
 			if(!((String)session.getAttribute("kind")).equals("sel")) {
@@ -659,7 +680,7 @@ public class controll {
 			return "redirect:mypage.pj";
 		}
 		
-		// ¸®ºä¸¦ ÀÛ¼ºÇÏ´Â ¸Ş¼Òµå
+		// ë¦¬ë·°ë¥¼ ì‘ì„±í•˜ëŠ” ë©”ì†Œë“œ
 		@RequestMapping("/writeRev.pj")
 		public String writeRev(@ModelAttribute SpringVO vo, HttpSession session) throws Exception{
 			if(session.getAttribute("userid")==null) {
@@ -675,7 +696,7 @@ public class controll {
 			return "redirect:mypage.pj";
 		}
 		
-		// ¸®ºä ´äº¯À» ÀÛ¼ºÇÏ´Â ¸Ş¼Òµå
+		// ë¦¬ë·° ë‹µë³€ì„ ì‘ì„±í•˜ëŠ” ë©”ì†Œë“œ
 		@RequestMapping("/ansRev.pj")
 		public String ansRev(@ModelAttribute SpringVO vo, HttpSession session) throws Exception{
 			if(((String)session.getAttribute("kind")).equals("sel")) {
@@ -689,7 +710,7 @@ public class controll {
 			return "redirect:mypage.pj";
 		}
 		
-		//¸¶ÀÌÆäÀÌÁö ¼öÁ¤(ÆÇ¸ÅÀÚ) 2022-02-06
+		//ë§ˆì´í˜ì´ì§€ ìˆ˜ì •(íŒë§¤ì) 2022-02-06
 		@RequestMapping("/modifySel.pj")
 		public String modifySel(@ModelAttribute SpringVO vo, HttpSession session) throws Exception{
 			if(!((String)session.getAttribute("kind")).equals("sel")) {
@@ -703,7 +724,7 @@ public class controll {
 			return "redirect:mypage.pj";
 		}
 		
-		//QnA ´äº¯ µî·ÏÇÏ±â 2022-02-08
+		//QnA ë‹µë³€ ë“±ë¡í•˜ê¸° 2022-02-08
 		@RequestMapping("/answer.pj")
 		public String answer(@ModelAttribute SpringVO vo, HttpSession session) throws Exception{
 			if(!((String)session.getAttribute("kind")).equals("seller")) {
@@ -718,7 +739,7 @@ public class controll {
 			return "redirect:mypage.pj";
 		}
 		
-		//°ü¸®ÀÚ ºñ¹Ğ¹øÈ£ º¯°æ 2022-02-06
+		//ê´€ë¦¬ì ë¹„ë°€ë²ˆí˜¸ ë³€ê²½ 2022-02-06
 		@RequestMapping("/chpw.pj")
 		public String chPassWord(@RequestParam("apw") String pw, HttpSession session) throws Exception{
 			if(session.getAttribute("userid")==null && ((String)session.getAttribute("kind")).equals("adm")) {
