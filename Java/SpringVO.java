@@ -6,7 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class SpringVO {
 
-	//°ü¸®ÀÚ Ãß°¡ 2022-02-04
+	//ê´€ë¦¬ì ì¶”ê°€ 2022-02-04
 	private String aid = null;
 	private String apw = null;
 	public String getAid() {return this.aid;}
@@ -15,7 +15,7 @@ public class SpringVO {
 	public void setAid(String aid) {this.aid = aid;}
 	public void setApw(String apw) {this.apw = apw;}
 	
-	// ¼ÒºñÀÚ
+	// ì†Œë¹„ì
 	private String cusid = null;
 	private String cuspw = null;
 	private String cusname = null;
@@ -40,7 +40,7 @@ public class SpringVO {
 	public void setCusmail(String cusmail) { this.cusmail = cusmail; }
 	public void setCusresid(Integer cusresid) {this.cusresid = cusresid;}
 	
-	// ÆÇ¸ÅÀÚ
+	// íŒë§¤ì
 	private String selid = null;
 	private String selpw = null;
 	private String selname = null;
@@ -65,14 +65,14 @@ public class SpringVO {
 	public void setSeladdr(String seladdr) { this.seladdr = seladdr; }
 	public void setRepname(String repname) { this.repname = repname; }
 	
-	// ÆÇ¸ÅÀÚ °Ë»ç
+	// íŒë§¤ì ê²€ì‚¬
 	private Integer valid = null;
 
 	public Integer getValid() { return valid; }
 	
 	public void setValid(Integer valid) { this.valid = valid; }
 	
-	// »óÇ°
+	// ìƒí’ˆ
 	private Integer pid = null;
 	private String ppid = null;
 	private String pname = null;
@@ -109,7 +109,7 @@ public class SpringVO {
 	public void setPcount(Integer count) { this.pcount = count; }
 	public void setSearch(String search) { this.search = search; }
 	
-	// °øÁö»çÇ×
+	// ê³µì§€ì‚¬í•­
 	private Integer pnum = null;
 	private String title = null;
 	private String content = null;
@@ -128,7 +128,7 @@ public class SpringVO {
 	public void setDate(String string) { this.date = string; }
 	public void setImportant(Integer important) { this.important = important; }
 	
-	// Àå¹Ù±¸´Ï
+	// ì¥ë°”êµ¬ë‹ˆ
 	private Integer cnum = null;
 	private Integer count  = null;
 	private Integer total = null;
@@ -141,7 +141,7 @@ public class SpringVO {
 	public void setCount(Integer count) { this.count = count; }
 	public void setTotal(Integer total) { this.total = total; }
 	
-	// ÁÖ¹®
+	// ì£¼ë¬¸
 	private Integer odnum = null;
 	private String addr = null;
 	private Integer phone = null;
@@ -157,14 +157,14 @@ public class SpringVO {
 	public void setPhone(Integer phone) { this.phone = phone; }
 	public void setOdate(Date odate) {this.odate = odate;}
 	
-	// ÁÖ¹®³»¿ª
+	// ì£¼ë¬¸ë‚´ì—­
 	private Integer odanum = null;
 
 	public Integer getOdanum() { return odanum; }
 	
 	public void setOdanum(Integer odanum) { this.odanum = odanum; }
 	
-	// ¸®ºä
+	// ë¦¬ë·°
 	private Integer rnum = null;
 	private String answer = null;
 	private Double score = null;
@@ -180,7 +180,7 @@ public class SpringVO {
 	public void setScore(Double score) { this.score = score; }
 	public void setImage(String image) { this.image = image; }
 	
-	// »çÁø
+	// ì‚¬ì§„
 	private Integer inum = null;
 
 	public Integer getInum() { return inum; }
@@ -195,7 +195,7 @@ public class SpringVO {
 	
 	public void setQno(Integer qno) { this.qno = qno; }
 	
-	// ±âÅ¸
+	// ê¸°íƒ€
 	
 	private String option = null;
 	private String option2 = null;
@@ -222,5 +222,39 @@ public class SpringVO {
 	
 	public void setSqldate(Date sqldate) { this.sqldate = sqldate; }
 	
+	// ê³µë™êµ¬ë§¤ 2022-02-23
+	private Integer gnum = null;
+	private String city = null;
+	private String state = null;
+	private String hid = null;
+	private String start = null;
+	private Long due = null;
+	private String address = null;
+	
+	public Integer getGnum() {return gnum;}
+	public String getCity() {return city;}
+	public String getState() {return state;}
+	public String getHid() {return hid;}
+	public String getStart() {return start;}
+	public Long getDue() {return due;}
+	public String getAddress() {return address;}
+	
+	public void setGnum(Integer gnum) {this.gnum = gnum;}
+	public void setCity(String city) {this.city = city;}
+	public void setState(String state) {this.state = state;}
+	public void setHid(String hid) {this.hid = hid;}
+	public void setStart(String start) {this.start = start;}
+	public void setDue(Long due) {this.due = due;}
+	public void setAddress(String address) {this.address=address;}
+	
+	//ê³µë™êµ¬ë§¤ ì£¼ë¬¸ 2022-02-23
+	private Integer gonum = null;
+	private String patid = null;
+	
+	public Integer getGonum() {return this.gonum;}
+	public String getPatid() {return this.patid;}
+	
+	public void setGonum(Integer gonum) {this.gonum = gonum;}
+	public void setPatid(String patid) {this.patid = patid;}
 	
 }
