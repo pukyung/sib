@@ -37,7 +37,7 @@ public interface SpringDAO {
 	public boolean login(SpringVO vo, String mode) throws Exception;
 	
 	//2022-02-04
-	// 2022-02-06 findMypage ºˆ¡§
+	// 2022-02-06 findMypage ¬º√∂√Å¬§
 	public SpringVO findMypage(String userid, String mode) throws Exception;
 	public List<SpringVO> findNotice() throws Exception;
 	public int addNotice(SpringVO vo) throws Exception;
@@ -56,4 +56,8 @@ public interface SpringDAO {
 	//2022-02-09
 	public int requestSoldout(int pid) throws Exception;
 	public int uploadRev(SpringVO vo, String id) throws Exception;
+	
+	//2022-02-23
+	public int makeRoom(SpringVO vo) throws Exception;
+	public List<SpringVO> findGroup(SpringVO vo) throws Exception;
 }
