@@ -13,8 +13,8 @@ body{
 }
 
 *{
+  margin:0px;
   font-family: 'surroundAir', Times,serif;
-  color: #464646;
 }
 
 /* 페이지 제목 */
@@ -39,7 +39,7 @@ body{
   border-bottom: 2px solid #05c46b;
 }
 
-#선택하기 td{
+#sel td{
   text-align: center;
   padding: 2px;
 }
@@ -67,10 +67,6 @@ body{
   margin-right: auto;
 }
 
-#참여자, #등록자{
-  display:none;
-}
-
 /* 참여자 등록 절차 */
 #my_modal, #modal{
   width: 50%;
@@ -87,15 +83,9 @@ h4{
   font-size: 18px;
 }
 
-.close_btn{
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-#stage1, #select{
+#stage1{
   width: 100%;
-  height: 300px;
+  height: 350px;
 }
 
 #stage1 input[type="text"],#select input[type="text"]{
