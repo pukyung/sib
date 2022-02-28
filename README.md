@@ -29,12 +29,12 @@
 ### 실행방법
 - http://gksdn1216.cafe24.com/main.pj
 - 테스트 ID / PWD
-> 사용자  
->   > cus1 / cus1  
-> 판매자  
->   > seller1 / seller1  
-> 관리자  
->   > admin / admin  
+* 사용자  
+  * cus1 / cus1  
+* 판매자  
+  * seller1 / seller1  
+* 관리자  
+  * admin / admin  
 
 ### 기술스택 
 - FrontEnd : HTML5, Css, JavaScript
