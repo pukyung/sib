@@ -1,19 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ taglib prefix="q" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="/project/css/ju/group.css" rel="stylesheet" type="text/css"/>
-<link href="/project/css/jeong/nav.css" rel="stylesheet" type="text/css" />
-<link href="/project/css/jeong/hanho.css" rel="stylesheet" type="text/css" />
+<link href="css/ju/group.css" rel="stylesheet" type="text/css"/>
+<link href="css/jeong/nav.css" rel="stylesheet" type="text/css" />
+<link href="css/jeong/hanho.css" rel="stylesheet" type="text/css" />
 <script>
     function show(who){
       if(who =='regi'){
         document.getElementById("who").style.display = 'none';
         document.getElementById("my_modal").style.display = 'block';
         document.getElementById("참여자").style.display = 'none';
-        document.getElementById("modal").style.display = 'none';
       }
       else if(who == 'pati'){
         document.getElementById("who").style.display = 'none';
@@ -33,11 +31,13 @@
       let price = document.getElementById("price");
       let hid = document.getElementById("hid");
       let due = document.getElementById("due");
+      let count = document.getElementById("count");
       let address = document.getElementById("address");
+      let pname = document.getElementById("pname");
 
      first.onclick = function(){
-        city.value = document.getElementById("c1").value;
-        state.value = document.getElementById("s1").value;
+        city.value = document.getElementById("ci").value;
+        state.value = document.getElementById("s").value;
         document.getElementById('stage1').style.display = 'none';
         document.getElementById('stage2').style.display = 'block';
       }
@@ -46,6 +46,9 @@
         price.value=document.getElementById("p").value;
         due.value = document.getElementById("d").value;
         address.value = document.getElementById("a").value;
+        pname.value = document.getElementById("n").value;
+        count.value = document.getElementById("c").value;
+
         document.getElementById('stage2').style.display = 'none';
         document.getElementById('stage3').style.display='block';
       }
@@ -54,42 +57,9 @@
     function bye(){
       let sta = document.getElementById('my_modal');
       sta.style.display = 'none';
-      document.getElementById('참여자').style.display='none';
+      document.getElementById('my_modal').style.display='none';
       document.getElementById('modal').style.display='none';
       document.getElementById('who').style.display='block';
-    }
-    
-    function loginStatus(kind){
-    	let login = document.getElementById("login");
-    	let logout = document.getElementById("logout");
-    	let mypage = document.getElementById("mypage");
-    	let cart = document.getElementById("cart");
-    	let register = document.getElementById("register");
-    	
-    	if(kind==''){
-    		login.style.display = "inline-block";
-    		logout.style.display = "none";
-    		mypage.style.display = "none";
-    		cart.style.display="none";
-    		register.style.display="inline-block";
-    	} else if( kind == "cus" ) {
-    		login.style.display="none";
-    		logout.style.display="inline-block";
-    		mypage.style.display="inline-block";
-    		cart.style.display="inline-block";
-    		register.style.display="none"
-    	} else if( kind == "sel" ) {
-    		login.style.display="none";
-    		logout.style.display="inline-block";
-    		mypage.style.display="inline-block";
-    		cart.style.display="none";
-    		register.style.display="none";
-    	} else{
-    		login.style.display="none";
-    		logout.style.display="inline-block";
-    		mypage.style.display="inline-block";
-    		register.style.display="none";
-    	}
     }
   </script>
 <title>심이베</title>
@@ -138,8 +108,8 @@
         <section id="stage1">
           <h4>🌁시/구</h4>
           <div class="txt_area">
-            <input type="text" id="c1" placeholder="시">
-            <input type="text" id="s1" placeholder="구/군"><br/>
+            <input type="text" id="ci" placeholder="시">
+            <input type="text" id="s" placeholder="구/군"><br/>
           </div> 
           <div class="btn_area">
             <input type="button" onclick="bye()" value="취소"><input type="button" id="next_1" value="다음">
@@ -148,6 +118,14 @@
         <section id="stage2">
           <h4>🤲🏻상품 등록하기</h4>
           <table>
+          	<tr>
+              <td class="what">상품명</td>
+              <td><input type="text" placeholder="상품명" id="n"></td>
+            </tr>
+            <tr>
+            	<td class="what">수량/무게</td>
+            	<td><input type="text" placeholder="수량" id="c"></td>
+            </tr>
             <tr>
               <td class="what"> 가격</td>
               <td><input type="text" placeholder="가격" id="p"></td>
@@ -157,8 +135,8 @@
               <td><input type="text" placeholder="수령지" id="a"></td>
             </tr>
             <tr>
-              <td class="what">마감일</td>
-              <td><input type="text" placeholder="yyyyMMdd" id="d"></td>
+              <td class="what">진행기간</td>
+              <td><input type="text" placeholder="몇일 동안 진행하나요" id="d"></td>
             </tr>
           </table>
           <div class="btn_area">
@@ -176,6 +154,14 @@
                 <td><input type="text" name="state" id="state" placeholder="구/군" readonly></td>
               </tr>
               <tr>
+                <td class="what" colspan="2">상품명</td>
+                <td colspan="2"><input type="text" name="pname" id="pname" placeholder="상품명"  readonly></td>
+              </tr>
+              <tr>
+              	<td class="what" colspan="2">수량</td>
+              	<td colspan="2"><input type="text" name="count" id="count" placeholder="수량"  readonly></td>
+              </tr>
+              <tr>
                 <td class="what" colspan="2">가격</td>
                 <td colspan="2"><input type="text" name="price" id="price" placeholder="가격"  readonly></td>
               </tr>
@@ -188,7 +174,7 @@
                 <td colspan="2"><input type="text" value="${userid}" name="hid" id="hid" placeholder="등록자" readonly></td>
               </tr>
               <tr>
-                <td class="what" colspan="2">마감일</td>
+                <td class="what" colspan="2">진행기간</td>
                 <td colspan="2"><input type="text" name="due" id="due"  placeholder="마감일"  readonly></td>
               </tr>
           </table>
@@ -204,9 +190,9 @@
         <section id="select">
           <h4>🌁시/구</h4>
           <div class="txt_area">
-            <form method="post">
-              <input type="text" name="city" id="시1" placeholder="시">
-              <input type="text" name="state" id="구1" placeholder="구/군">
+            <form method="post" action="groupList.pj">
+              <input type="text" name="city" id="c1" placeholder="시">
+              <input type="text" name="state" id="s1" placeholder="구/군">
               <div class="btn_area">
                 <input type="button" onclick="bye()" class="cancel" value="취소"><input type="submit" value="찾기">
               </div> 
@@ -216,6 +202,5 @@
       </section>
     </div>
   </div> 
-  
 </body>
 </html>
